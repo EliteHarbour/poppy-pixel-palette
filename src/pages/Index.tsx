@@ -559,9 +559,7 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center">
           <p className="mb-4">© {new Date().getFullYear()} Adnan Ahamed Farooqui. All rights reserved.</p>
           <div className="flex justify-center space-x-4">
-            <a href="#" className="hover:text-primary transition-colors">
-              <Heart size={20} />
-            </a>
+
             <a href="mailto:adnanahmedfarooqui@gmail.com" className="hover:text-primary transition-colors">
               <Mail size={20} />
             </a>

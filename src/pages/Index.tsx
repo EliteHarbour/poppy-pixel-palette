@@ -1,12 +1,607 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState, useEffect, useRef } from "react";
+import { Heart, Mail, Phone, MapPin, Linkedin, ExternalLink, ChevronRight } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import ProjectCard from "@/components/ProjectCard";
+import SkillTag from "@/components/SkillTag";
+import ExperienceCard from "@/components/ExperienceCard";
+import FloatingShapes from "@/components/FloatingShapes";
+import AnimatedText from "@/components/AnimatedText";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
+  const [activeTab, setActiveTab] = useState("all");
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const projects = [
+    {
+      id: 1,
+      title: "Clipsy (Assistive Tech Platform)",
+      description: "Led product design and user research for an AI-powered platform supporting accessibility for people with disabilities and older adults.",
+      image: "public/lovable-uploads/6b033143-05e8-4e9c-9a0d-7234c80ec402.png",
+      link: "https://clipsy-ai.netlify.app/",
+      category: "design",
+      color: "bg-pastel-blue"
+    },
+    {
+      id: 2,
+      title: "BotanIQ (Brand Genesis)",
+      description: "Developed a complete brand identity and Shopify website for an organic wellness brand.",
+      image: "public/lovable-uploads/ece1e30b-b3df-429f-8677-d38d3bd9da43.png",
+      link: "https://www.canva.com/design/DAGfJjAB924/a9ahSQYHvKcJM6mZi8rs5A/edit?utm_content=DAGfJjAB924&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      category: "branding",
+      color: "bg-pastel-green"
+    },
+    {
+      id: 3,
+      title: "Eliteharbur (E-commerce Website)",
+      description: "Developed and deployed a branded, user-friendly e-commerce site on Shopify.",
+      image: "public/lovable-uploads/6c338fab-5f39-412d-88a9-a744ce5da94a.png",
+      link: "https://1bjvju-n0.myshopify.com",
+      category: "development",
+      color: "bg-pastel-pink"
+    },
+    {
+      id: 4,
+      title: "Elder Care Startup",
+      description: "Developed a comprehensive business plan for an elder care startup, integrating design thinking, market research, and financial projections.",
+      image: "public/lovable-uploads/9844355f-347a-4e24-8d59-db5473f5bdbc.png",
+      link: "https://www.canva.com/design/DAGcWV_xY-0/auL4BI6ZLSKRorTlikyzoA/edit?utm_content=DAGcWV_xY-0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      category: "business",
+      color: "bg-pastel-purple"
+    },
+    {
+      id: 5,
+      title: "Business Analysis & Process Management",
+      description: "Completed a Coursera project on process mapping, workflow optimization, and data-driven decision-making.",
+      image: "public/lovable-uploads/f4dffa29-d654-42b6-966c-19d366d70fc5.png",
+      link: "https://coursera.org/share/2ed4ccb6db4602de024b5beb556dff77",
+      category: "business",
+      color: "bg-pastel-yellow"
+    },
+    {
+      id: 6,
+      title: "Multi-Specialty Hospital Interface",
+      description: "Designed a user-centric landing page using Figma, improving accessibility and user experience.",
+      image: "public/lovable-uploads/e95b1ba3-40d0-4ae6-b12c-bf42ad4ff550.png",
+      link: "https://www.figma.com/design/xQfo4JD2pAdJ72yQNulIbw/MediVerse?node-id=0-1&t=6jz1CjFqbBPkMuyD-1",
+      category: "design",
+      color: "bg-pastel-peach"
+    },
+    {
+      id: 7,
+      title: "Plug It (EV Charging Startup)",
+      description: "Led a team to win the SDG Hackathon with a sustainable EV charging solution.",
+      image: "public/lovable-uploads/816cce49-0b75-4c1f-a5b0-76d55d594d28.png",
+      link: "https://www.canva.com/design/DAGRtb_1joA/muGtqJ2DYkv7h1ZGlZjXmA/edit?utm_content=DAGRtb_1joA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      category: "business",
+      color: "bg-pastel-blue"
+    },
+    {
+      id: 8,
+      title: "Interplanetary Travel App Prototype",
+      description: "Designed a prototype for a hypothetical interplanetary travel app (like Uber) using Figma, focusing on intuitive UI/UX and futuristic user journeys.",
+      image: "public/lovable-uploads/bd77cba2-d8ee-4e00-af6f-cd5e827b1ed0.png",
+      link: "https://www.figma.com/design/QbdK2rp95arptXRLtENCCP/Uber--multiverse-of-cabness---SPACESHIP?node-id=0-1&t=jr9JcCKEhEQmWUL3-1",
+      category: "design",
+      color: "bg-pastel-green"
+    },
+    {
+      id: 9,
+      title: "Vivah Brand Analysis",
+      description: "Audited social media presence and delivered strategic recommendations for engagement growth.",
+      image: "public/lovable-uploads/9f0f969e-f062-4312-be23-e1f3e0dc0bdd.png",
+      link: "https://www.canva.com/design/DAGeiIlsq3c/zYDg7k6ykXSEaJiSVxH-Gw/edit?utm_content=DAGeiIlsq3c&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      category: "marketing",
+      color: "bg-pastel-pink"
+    },
+    {
+      id: 10,
+      title: "Email Marketing Lead Magnet Page",
+      description: "Designed and launched a high-converting landing page on Kit.com for email marketing, featuring a lead magnet to capture subscribers and nurture leads through automated sequences.",
+      image: "public/lovable-uploads/9d6e8f7b-c493-439d-a756-8edbc56c01fb.png",
+      link: "https://acessup.kit.com/367660ff99",
+      category: "marketing",
+      color: "bg-pastel-purple"
+    },
+    {
+      id: 11,
+      title: "Google Ads Campaign for Dinora",
+      description: "Planned and executed a targeted Google Ads campaign for Dinora, a B2B jeans brand. Developed ad creatives, selected effective keywords, optimized bidding strategies, and analyzed campaign performance.",
+      image: "public/lovable-uploads/f9c2b0d5-ab5f-451a-814e-249d59ba4f81.png",
+      link: "https://gamma.app/docs/Google-Search-Campaign-for-Denora-Shop-dwct1zzka2rqcdb",
+      category: "marketing",
+      color: "bg-pastel-yellow"
+    }
+  ];
+
+  const skills = [
+    { category: "Digital Marketing", skills: ["Meta Ads", "Google Ads", "SEO", "Social Media Strategy", "Content Creation", "Analytics", "Email Marketing", "WhatsApp Marketing"] },
+    { category: "Branding", skills: ["Brand Strategy", "Visual Identity", "Storytelling", "Logo Design", "Typography"] },
+    { category: "Business Development", skills: ["Market Research", "Business Model Innovation", "Investor Pitching", "Strategic Planning", "Go-to-Market Strategies"] },
+    { category: "Project Management", skills: ["Agile Project Planning", "Process Mapping", "Cross-functional Collaboration", "Team Leadership", "Event Management"] },
+    { category: "UI/UX Design", skills: ["Figma", "Canva", "Responsive Web Design", "User-Centric Prototyping", "Empathy Mapping", "Wireframing"] },
+    { category: "Content Creation", skills: ["Creative Writing", "Public Speaking", "Multimedia Production", "Persuasive Storytelling"] },
+    { category: "Data Analysis", skills: ["Excel", "Financial Statement Analysis", "Break-even Calculations", "Market Research", "Analytics"] },
+    { category: "Technical Tools", skills: ["Microsoft Office", "Trello", "Jira", "Shopify", "WordPress", "SEMrush", "Mixpanel", "Zapier", "n8n", "kit.com", "aisensy", "Google Analytics", "Workflow Automation"] },
+  ]
+
+  const experiences = [
+    {
+      title: "Co-Founder",
+      company: "Clipsy",
+      duration: "Jan 2025 – Present",
+      description: [
+        "Spearheaded the conceptualization and design of an AI-powered assistive technology platform for people with disabilities and older adults.",
+        "Conducted 100+ user interviews to inform accessible and intuitive feature development.",
+        "Developed business strategy, investor pitches, and digital marketing campaigns to build early brand presence and community engagement."
+      ],
+      color: "blue"
+    },
+    {
+      title: "Business Student",
+      company: "Institute of Venture Building (IVB)",
+      duration: "Oct 2024 – Present",
+      description: [
+        "Led a winning team at the SDG Hackathon, developing a sustainable EV charging solution.",
+        "Conducted market research, strategic analysis, and collaborated with industry mentors to refine business models."
+      ],
+      color: "green"
+    },
+    {
+      title: "Apprentice",
+      company: "Pathways to Google",
+      duration: "May 2023 – Aug 2023",
+      description: [
+        "Completed hands-on training in product management and user experience design.",
+        "Worked on cross-functional projects, enhancing technical and leadership skills."
+      ],
+      color: "yellow"
+    },
+    {
+      title: "Freelance Content Creator",
+      company: "Self-employed",
+      duration: "Mar 2022 – Present",
+      description: [
+        "Designed and executed digital content strategies for startups and brands.",
+        "Produced multimedia content, managed content calendars, and optimized campaigns using analytics."
+      ],
+      color: "purple"
+    },
+    {
+      title: "Event Management Lead",
+      company: "Astitva, IIT Dhanbad",
+      duration: "Mar 2022 – Jan 2024",
+      description: [
+        "Organized and managed over 10 events promoting gender inclusivity and digital accessibility.",
+        "Designed digital campaigns and engaged 250+ participants per event."
+      ],
+      color: "pink"
+    }
+  ];
+
+  const filteredProjects = activeTab === "all" 
+    ? projects 
+    : projects.filter(project => project.category === activeTab);
+
+  const categories = [
+    { id: "all", name: "All Projects" },
+    { id: "design", name: "Design" },
+    { id: "development", name: "Development" },
+    { id: "business", name: "Business" },
+    { id: "marketing", name: "Marketing" },
+    { id: "branding", name: "Branding" },
+  ];
+
+  // Function to check if element is in viewport
+  const useOnScreen = (ref: React.RefObject<HTMLElement>) => {
+    const [isIntersecting, setIntersecting] = useState(false);
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setIntersecting(entry.isIntersecting);
+        },
+        { threshold: 0.1 }
+      );
+      
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+      
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      };
+    }, [ref]);
+    
+    return isIntersecting;
+  };
+
+  // Create refs for each section
+  const aboutRef = useRef<HTMLElement>(null);
+  const skillsRef = useRef<HTMLElement>(null);
+  const experienceRef = useRef<HTMLElement>(null);
+  const projectsRef = useRef<HTMLElement>(null);
+  const educationRef = useRef<HTMLElement>(null);
+  const achievementsRef = useRef<HTMLElement>(null);
+  const contactRef = useRef<HTMLElement>(null);
+  
+  // Check if sections are visible
+  const aboutVisible = useOnScreen(aboutRef);
+  const skillsVisible = useOnScreen(skillsRef);
+  const experienceVisible = useOnScreen(experienceRef);
+  const projectsVisible = useOnScreen(projectsRef);
+  const educationVisible = useOnScreen(educationRef);
+  const achievementsVisible = useOnScreen(achievementsRef);
+  const contactVisible = useOnScreen(contactRef);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-white">
+      <FloatingShapes />
+      <ScrollToTop />
+      <Navbar />
+      
+      {/* Hero Section */}
+      <section id="hero" className="pt-32 pb-20 px-4 md:px-0">
+        <div className="container mx-auto flex flex-col md:flex-row items-center">
+          <div className={`md:w-1/2 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              Hi, I'm <AnimatedText text="Adnan" speed={150} className="text-primary" /> 👋
+            </h1>
+            <div className="h-1 w-20 bg-black mb-6"></div>
+            <h2 className="text-xl md:text-2xl mb-6">
+              <AnimatedText text="Entrepreneur & Digital Marketing Specialist" speed={50} />
+            </h2>
+            <p className="text-gray-600 mb-8 max-w-md">
+              I combine creativity with data-driven strategies to help businesses grow through innovative digital solutions.
+            </p>
+            <div className="flex space-x-4">
+              <a 
+                href="#contact" 
+                className="sticker-button bg-primary text-white"
+              >
+                Contact Me
+              </a>
+              <a 
+                href="#projects" 
+                className="sticker-button bg-white"
+              >
+                See My Work
+              </a>
+            </div>
+          </div>
+          <div className={`md:w-1/2 mt-10 md:mt-0 flex justify-center transition-opacity duration-1000 delay-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+            <div className="relative">
+              <div className="absolute -top-6 -left-6 w-20 h-20 bg-pastel-yellow rounded-full z-0"></div>
+              <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-pastel-pink rounded-full z-0"></div>
+              <div className="relative z-10 w-72 h-72 rounded-full overflow-hidden border-4 border-black sticker-card p-1 bg-white">
+                <img 
+                  src="public/lovable-uploads/bc63cc3d-34e0-4126-b68e-0c84088f5e0d.png" 
+                  alt="Adnan Ahamed Farooqui" 
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* About Section */}
+      <section 
+        id="about" 
+        className="py-20 bg-pastel-blue px-4 md:px-0"
+        ref={aboutRef}
+      >
+        <div className={`container mx-auto transition-all duration-1000 ${aboutVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+            About <span className="text-primary">Me</span>
+          </h2>
+          <div className="sticker-card bg-white p-8 max-w-3xl mx-auto">
+            <p className="text-lg mb-6">
+              I am a dynamic entrepreneur and business student with a strong foundation in digital marketing, business development, and project management. My expertise includes executing data-driven marketing strategies (Meta ads, SEO), leading complex projects from ideation to implementation, and driving initiatives that foster sustainable growth.
+            </p>
+            <p className="text-lg">
+              I am passionate about leveraging technology and innovation to create inclusive, high-impact business solutions that make a difference in people's lives. Currently pursuing my education at the Institute of Venture Building (IVB) and SRM Institute of Science and Technology, I combine academic knowledge with practical experience to create innovative solutions to real-world problems.
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      {/* Skills Section */}
+      <section id="skills" className="py-20 px-4 md:px-0">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+            My <span className="text-primary">Skills</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {skills.map((skillGroup, index) => (
+              <div key={index} className="sticker-card p-6">
+                <h3 className="text-xl font-bold mb-4">{skillGroup.category}</h3>
+                <div className="flex flex-wrap">
+                  {skillGroup.skills.map((skill, skillIndex) => (
+                    <SkillTag 
+                      key={skillIndex} 
+                      skill={skill} 
+                      color={["blue", "pink", "purple", "yellow", "green", "peach"][skillIndex % 6]} 
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Experience Section */}
+      <section id="experience" className="py-20 bg-pastel-pink px-4 md:px-0">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+            Work <span className="text-primary">Experience</span>
+          </h2>
+          
+          <div className="max-w-3xl mx-auto">
+            {experiences.map((experience, index) => (
+              <ExperienceCard
+                key={index}
+                title={experience.title}
+                company={experience.company}
+                duration={experience.duration}
+                description={experience.description}
+                color={experience.color}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Projects Section */}
+      <section id="projects" className="py-20 px-4 md:px-0">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+            Featured <span className="text-primary">Projects</span>
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            A selection of my recent work across design, development, and digital marketing.
+          </p>
+          
+          <div className="flex justify-center mb-12 overflow-x-auto pb-4">
+            <div className="flex space-x-2">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  className={`px-4 py-2 rounded-full font-medium transition-all ${
+                    activeTab === category.id
+                      ? "bg-primary text-white"
+                      : "bg-gray-100 hover:bg-gray-200"
+                  }`}
+                  onClick={() => setActiveTab(category.id)}
+                >
+                  {category.name}
+                </button>
+              ))}
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((project) => (
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                link={project.link}
+                color={project.color}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Education Section */}
+      <section 
+        id="education" 
+        className="py-20 bg-pastel-purple px-4 md:px-0"
+        ref={educationRef}
+      >
+        <div className={`container mx-auto transition-all duration-1000 ${educationVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+            <span className="text-primary">Education</span>
+          </h2>
+          
+          <div className="max-w-3xl mx-auto space-y-8">
+            <div className="sticker-card p-6">
+              <h3 className="text-xl font-bold">Institute of Venture Building (IVB), Chennai</h3>
+              <p className="text-gray-600">Entrepreneurship and Business Development (2024–2027)</p>
+            </div>
+            
+            <div className="sticker-card p-6">
+              <h3 className="text-xl font-bold">SRM Institute of Science and Technology (SRM IST), Chennai</h3>
+              <p className="text-gray-600">Bachelor of Computer Application (2024–2027)</p>
+            </div>
+            
+            <div className="sticker-card p-6">
+              <h3 className="text-xl font-bold">IIT (ISM) Dhanbad</h3>
+              <p className="text-gray-600">Bachelor of Technology in Computer Science and Engineering (2021–2024)</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="sticker-card p-6">
+                <h3 className="text-xl font-bold">Maharishi Dayanand Public School (CBSE)</h3>
+                <p className="text-gray-600">12th Grade: 79.4% (2021)</p>
+              </div>
+              
+              <div className="sticker-card p-6">
+                <h3 className="text-xl font-bold">Central Academy Senior Secondary School (CBSE)</h3>
+                <p className="text-gray-600">10th Grade: 90.4% (2019)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Achievements Section */}
+      <section id="achievements" className="py-20 px-4 md:px-0">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+            Awards & <span className="text-primary">Achievements</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="sticker-card p-6 hover-lift">
+              <div className="flex items-center mb-4">
+                <div className="bg-pastel-yellow p-3 rounded-full mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold">NTSE Scholar</h3>
+              </div>
+              <p className="text-gray-600">Top 2,000 in India, recognized for academic excellence and problem-solving.</p>
+            </div>
+            
+            <div className="sticker-card p-6 hover-lift">
+              <div className="flex items-center mb-4">
+                <div className="bg-pastel-green p-3 rounded-full mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold">JEE Qualified</h3>
+              </div>
+              <p className="text-gray-600">Cleared both JEE Advanced (rank 109) and JEE Mains.</p>
+            </div>
+            
+            <div className="sticker-card p-6 hover-lift">
+              <div className="flex items-center mb-4">
+                <div className="bg-pastel-blue p-3 rounded-full mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold">Top 10% in NSEJS</h3>
+              </div>
+              <p className="text-gray-600">Demonstrated excellence in STEM.</p>
+            </div>
+            
+            <div className="sticker-card p-6 hover-lift">
+              <div className="flex items-center mb-4">
+                <div className="bg-pastel-pink p-3 rounded-full mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold">Google Pathways Participant</h3>
+              </div>
+              <p className="text-gray-600">Selected for mentorship and advanced technical training (2023).</p>
+            </div>
+            
+            <div className="sticker-card p-6 hover-lift">
+              <div className="flex items-center mb-4">
+                <div className="bg-pastel-purple p-3 rounded-full mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold">SDG Hackathon Winner</h3>
+              </div>
+              <p className="text-gray-600">Led team to victory with sustainable business solution (2024).</p>
+            </div>
+            
+            <div className="sticker-card p-6 hover-lift">
+              <div className="flex items-center mb-4">
+                <div className="bg-pastel-yellow p-3 rounded-full mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold">Brand Craft Fusion Winner</h3>
+              </div>
+              <p className="text-gray-600">1st place for creative video production and digital storytelling.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Contact Section */}
+      <section 
+        id="contact" 
+        className="py-20 bg-pastel-green px-4 md:px-0"
+        ref={contactRef}
+      >
+        <div className={`container mx-auto transition-all duration-1000 ${contactVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+            Get In <span className="text-primary">Touch</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <a href="mailto:adnanahmedfarooqui@gmail.com" className="sticker-card p-6 flex flex-col items-center text-center hover-lift">
+              <div className="bg-primary p-4 rounded-full text-white mb-4">
+                <Mail size={24} />
+              </div>
+              <h3 className="font-bold mb-2">Email</h3>
+              <p className="text-gray-600">adnanahmedfarooqui@gmail.com</p>
+            </a>
+            
+            <a href="tel:+918690727572" className="sticker-card p-6 flex flex-col items-center text-center hover-lift">
+              <div className="bg-primary p-4 rounded-full text-white mb-4">
+                <Phone size={24} />
+              </div>
+              <h3 className="font-bold mb-2">Phone</h3>
+              <p className="text-gray-600">+91-8690727572</p>
+            </a>
+            
+            <a href="https://linkedin.com/in/adnan-ahamed-farooqui/" target="_blank" rel="noopener noreferrer" className="sticker-card p-6 flex flex-col items-center text-center hover-lift">
+              <div className="bg-primary p-4 rounded-full text-white mb-4">
+                <Linkedin size={24} />
+              </div>
+              <h3 className="font-bold mb-2">LinkedIn</h3>
+              <p className="text-gray-600">adnan-ahamed-farooqui</p>
+            </a>
+          </div>
+          
+          <div className="mt-16 text-center">
+            <p className="text-lg mb-6">
+              Located in <span className="font-bold">Chennai, Tamil Nadu, India</span>
+            </p>
+            
+            <div className="sticker-card p-6 bg-white inline-flex items-center">
+              <MapPin className="mr-2" />
+              <span>Chennai, Tamil Nadu, India</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Footer */}
+      <footer className="py-8 bg-gray-900 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <p className="mb-4">© {new Date().getFullYear()} Adnan Ahamed Farooqui. All rights reserved.</p>
+          <div className="flex justify-center space-x-4">
+            <a href="#" className="hover:text-primary transition-colors">
+              <Heart size={20} />
+            </a>
+            <a href="mailto:adnanahmedfarooqui@gmail.com" className="hover:text-primary transition-colors">
+              <Mail size={20} />
+            </a>
+            <a href="https://linkedin.com/in/adnan-ahamed-farooqui/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+              <Linkedin size={20} />
+            </a>
+            <a href="#" className="hover:text-primary transition-colors">
+              <ExternalLink size={20} />
+            </a>
+          </div>
+          <p className="mt-4 text-sm text-gray-400">
+            Made with ❤️ and React
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

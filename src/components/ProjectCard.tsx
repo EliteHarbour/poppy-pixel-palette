@@ -8,9 +8,10 @@ interface ProjectCardProps {
   image: string;
   link: string;
   color: string;
+  imageLoading?: "lazy" | "eager";
 }
 
-const ProjectCard = ({ title, description, image, link, color }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, image, link, color, imageLoading = "lazy" }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   
@@ -37,7 +38,8 @@ const ProjectCard = ({ title, description, image, link, color }: ProjectCardProp
           src={image} 
           alt={title} 
           className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-110' : 'scale-100'} ${imageLoaded ? 'block' : 'hidden'}`} 
-          loading="lazy"
+          loading={imageLoading}
+          fetchPriority={imageLoading === "eager" ? "high" : "auto"}
           onLoad={handleImageLoad}
           decoding="async"
         />

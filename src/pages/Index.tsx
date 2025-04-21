@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Heart, Mail, Phone, MapPin, Linkedin, ExternalLink, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -9,109 +8,108 @@ import FloatingShapes from "@/components/FloatingShapes";
 import AnimatedText from "@/components/AnimatedText";
 import ScrollToTop from "@/components/ScrollToTop";
 
-// Hero photo - using the new image you provided
-const heroPhoto = "/lovable-uploads/b7213a9b-69ed-47d1-addf-5f9f5654cd83.png";
+const heroPhoto = "/lovable-uploads/2ad85604-131e-48ce-9d08-2ee4455921fa.png";
 
 const projects = [
   {
     id: 1,
     title: "Clipsy (Assistive Tech Platform)",
-    description: "Clipsy is an AI-powered accessibility platform I helped design and build, focusing on making life easier for people with disabilities and seniors. This product was shaped by talking to real users and combining tech with empathy.",
-    image: "/lovable-uploads/156c91ab-7d06-49ef-ad9d-e562799d28fb.png",
+    description: "Clipsy is an AI-powered accessibility platform I helped design and build, making tech more friendly for people with disabilities and seniors. We listened to users at every step to create something that truly helps.",
+    image: "/lovable-uploads/7563ced7-1326-47c6-86ed-2882a3913fa1.png",
     link: "https://clipsy-ai.netlify.app/",
     category: "design",
-    color: "bg-pastel-blue",
+    color: "bg-pastel-blue"
   },
   {
     id: 2,
     title: "Eliteharbur (Shopify E-commerce Website)",
-    description: "Developed and deployed a branded, user-friendly e-commerce site on Shopify.",
-    image: "/lovable-uploads/ab6e591f-333e-401d-af9a-199b4e78b60e.png",
+    description: "I built and launched a cheerful, easy-to-use Shopify website for Eliteharbur, helping their brand deliver a simple and delightful shopping experience.",
+    image: "/lovable-uploads/2a39adcf-4595-4697-83e3-31bdeba09dc9.png",
     link: "https://1bjvju-n0.myshopify.com",
     category: "development",
-    color: "bg-pastel-pink",
+    color: "bg-pastel-pink"
   },
   {
     id: 3,
     title: "Capstone Project – Elder Care Startup",
-    description: "Developed a comprehensive business plan for an elder care startup, integrating design thinking, market research, and financial projections.",
-    image: "/lovable-uploads/0f0dcb4c-a86e-4e03-92fb-c25369c58c9f.png",
+    description: "I created a business plan for an elder care startup—combining design thinking, user feedback, and financial planning to move from idea to real impact.",
+    image: "/lovable-uploads/66cd5996-1505-4ab1-a76a-957635cc0dfa.png",
     link: "https://www.canva.com/design/DAGcWV_xY-0/auL4BI6ZLSKRorTlikyzoA/edit?utm_content=DAGcWV_xY-0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "business",
-    color: "bg-pastel-purple",
+    color: "bg-pastel-purple"
   },
   {
     id: 4,
     title: "Brand Genesis – BotanIQ",
-    description: "For BotanIQ, I developed a fresh, organic brand identity and designed their Shopify website—helping them express their mission as a wellness brand in every pixel.",
-    image: "/lovable-uploads/01314520-7fb1-4bbd-8856-63cdda87c3d4.png",
+    description: "For BotanIQ, I developed a fresh, organic brand identity and designed their Shopify website—helping them share their wellness mission in every pixel.",
+    image: "/lovable-uploads/b6d48e18-014c-440d-a2f6-f2034b689cf7.png",
     link: "https://www.canva.com/design/DAGfJjAB924/a9ahSQYHvKcJM6mZi8rs5A/edit?utm_content=DAGfJjAB924&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "branding",
-    color: "bg-pastel-green",
+    color: "bg-pastel-green"
   },
   {
     id: 5,
     title: "Business Analysis & Process Management (Coursera)",
-    description: "Completed a Coursera project on process mapping, workflow optimization, and data-driven decision-making.",
-    image: "/lovable-uploads/11725915-2239-4312-a3a2-d6189d1b779c.png",
+    description: "On Coursera, I learned to map processes, optimize workflows, and make sharper decisions—all rooted in real data.",
+    image: "/lovable-uploads/54a5335b-0e37-4755-bad8-7b3190c26528.png",
     link: "https://coursera.org/share/2ed4ccb6db4602de024b5beb556dff77",
     category: "business",
-    color: "bg-pastel-yellow",
+    color: "bg-pastel-yellow"
   },
   {
     id: 6,
     title: "Responsive Web Interface (Multi-Specialty Hospital)",
-    description: "Designed a user-centric landing page using Figma, improving accessibility and user experience.",
-    image: "/lovable-uploads/c63bd646-3ef5-4a76-8f3c-f2d2d1cfda37.png",
+    description: "I designed a modern, user-centric landing page for a multi-specialty hospital to make information easy and accessible.",
+    image: "/lovable-uploads/2717389b-a8fc-4483-aab7-2dd20f17e15a.png",
     link: "https://www.figma.com/design/xQfo4JD2pAdJ72yQNulIbw/MediVerse?node-id=0-1&t=6jz1CjFqbBPkMuyD-1",
     category: "design",
-    color: "bg-pastel-peach",
+    color: "bg-pastel-peach"
   },
   {
     id: 7,
     title: "Plug It (EV Charging Startup)",
-    description: "Led a team to win the SDG Hackathon with a sustainable EV charging solution.",
-    image: "/lovable-uploads/74cad96e-dccd-4d2f-8c92-2c37375ff2b9.png",
+    description: "My team and I won the SDG Hackathon with Plug It, a sustainable solution for EV charging that's all about greener cities.",
+    image: "/lovable-uploads/867f07c3-2caa-41ee-aef0-7cd319b5ab4d.png",
     link: "https://www.canva.com/design/DAGRtb_1joA/muGtqJ2DYkv7h1ZGlZjXmA/edit?utm_content=DAGRtb_1joA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "business",
-    color: "bg-pastel-blue",
+    color: "bg-pastel-blue"
   },
   {
     id: 8,
     title: "Interplanetary Travel App Prototype (Figma)",
-    description: "Designed a prototype for a hypothetical interplanetary travel app (like Uber) using Figma. Focused on intuitive UI/UX for booking space journeys, integrating futuristic design elements, user flows.",
-    image: "/lovable-uploads/996cfe28-d5be-43f3-a5f4-ee7297d5aebc.png",
+    description: "Just for fun: I created a Figma prototype for a cosmic travel app like Uber—imagining what space journeys could look like if booking was easy and playful.",
+    image: "/lovable-uploads/dfc28735-190a-425b-8e34-bde4ee4fbf97.png",
     link: "https://www.figma.com/design/QbdK2rp95arptXRLtENCCP/Uber--multiverse-of-cabness---SPACESHIP?node-id=0-1&t=jr9JcCKEhEQmWUL3-1",
     category: "design",
-    color: "bg-pastel-green",
+    color: "bg-pastel-green"
   },
   {
     id: 9,
     title: "Vivah Brand Analysis",
-    description: "Audited social media presence and delivered strategic recommendations for engagement growth.",
-    image: "/lovable-uploads/ad28dc0e-b628-4f15-a3f8-0ad76ae3f0b1.png",
+    description: "I audited Vivah's social presence and delivered creative strategies to help their engagement skyrocket.",
+    image: "/lovable-uploads/315fb446-1f42-48c3-8761-ad3b92690fec.png",
     link: "https://www.canva.com/design/DAGeiIlsq3c/zYDg7k6ykXSEaJiSVxH-Gw/edit?utm_content=DAGeiIlsq3c&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "marketing",
-    color: "bg-pastel-pink",
+    color: "bg-pastel-pink"
   },
   {
     id: 10,
     title: "Email Marketing Lead Magnet Page (Kit.com)",
-    description: "Designed and launched a high-converting landing page on Kit.com for email marketing, featuring a lead magnet to capture subscribers and nurture leads through automated sequences.",
-    image: "/lovable-uploads/334ea24c-b3c0-4587-bf8a-31a0d9759916.png",
+    description: "From idea to launch: I designed a high-converting email lead magnet page on Kit.com, complete with automation sequences for growth.",
+    image: "/lovable-uploads/1af44227-f669-4179-b3c3-2645c31e9972.png",
     link: "https://acessup.kit.com/367660ff99",
     category: "marketing",
-    color: "bg-pastel-purple",
+    color: "bg-pastel-purple"
   },
   {
     id: 11,
     title: "Google Ads Campaign for Dinora (B2B Jeans Brand)",
-    description: "Planned and executed a targeted Google Ads campaign for Dinora, a B2B jeans brand. Developed ad creatives, selected effective keywords, optimized bidding strategies, and analyzed campaign performance to generate high-quality business leads and increase brand visibility in the B2B apparel market.",
-    image: "/lovable-uploads/ffd25e7d-0b7d-49b5-b032-09f2c43f4d2c.png",
+    description: "I drove real business results with targeted Google Ads for Dinora—optimizing creative, keywords, bidding, and reporting to maximize quality B2B leads.",
+    image: "/lovable-uploads/11391f00-db89-4744-a2a5-0b4de5744119.png",
     link: "https://gamma.app/docs/Google-Search-Campaign-for-Denora-Shop-dwct1zzka2rqcdb",
     category: "marketing",
-    color: "bg-pastel-yellow",
-  },
+    color: "bg-pastel-yellow"
+  }
 ];
 
 const skills = [
@@ -212,31 +210,21 @@ const Index = () => {
   
   useEffect(() => {
     setIsVisible(true);
-    
-    // Preload images for better performance
-    const imagePromises: Promise<void>[] = [];
-    
-    // Add hero image
-    const heroImagePromise = new Promise<void>((resolve) => {
-      const img = new Image();
-      img.onload = () => resolve();
-      img.src = heroPhoto;
-    });
-    imagePromises.push(heroImagePromise);
-    
-    // Add first few project images
-    projects.slice(0, 3).forEach(project => {
-      const promise = new Promise<void>((resolve) => {
-        const img = new Image();
-        img.onload = () => resolve();
-        img.src = project.image;
-      });
-      imagePromises.push(promise);
-    });
-    
-    // When key images are loaded, set imagesLoaded to true
-    Promise.all(imagePromises).then(() => {
-      setImagesLoaded(true);
+
+    const allImages = [
+      heroPhoto,
+      ...projects.map(proj => proj.image)
+    ];
+    let loadedImages = 0;
+    allImages.forEach(src => {
+      const img = new window.Image();
+      img.onload = () => {
+        loadedImages++;
+        if (loadedImages === allImages.length) {
+          setImagesLoaded(true);
+        }
+      };
+      img.src = src;
     });
   }, []);
 
@@ -270,14 +258,14 @@ const Index = () => {
         <div className="container mx-auto flex flex-col md:flex-row items-center">
           <div className={`md:w-1/2 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Hi, I'm <AnimatedText text="Adnan" speed={125} className="text-primary" /> 👋
+              Hi, I'm <AnimatedText text="Adnan" speed={120} className="text-primary" /> 👋
             </h1>
             <div className="h-1 w-20 bg-black mb-6"></div>
-            <h2 className="text-xl md:text-2xl mb-6 text-primary">
-              <AnimatedText text="Turning creative ideas into impact, digitally." speed={54} />
+            <h2 className="text-xl md:text-2xl mb-6 text-primary font-medium">
+              Business student with a passion for innovation, digital marketing, UI/UX, and creating brands that make a difference.
             </h2>
-            <p className="text-gray-600 mb-8 max-w-md leading-relaxed">
-              Welcome! I'm a business student and entrepreneur who genuinely enjoys making a difference with design, strategy, and marketing. If you love creative projects (and friendly vibes), let's connect and build something great together.
+            <p className="text-gray-700 mb-8 max-w-md leading-relaxed">
+              Thanks for dropping by! I'm always excited to take creative ideas and turn them into something real—whether that's a brand, website, or full marketing campaign. Let’s create something meaningful together.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -294,19 +282,19 @@ const Index = () => {
               </a>
             </div>
           </div>
-          <div className={`md:w-1/2 mt-10 md:mt-0 flex justify-center transition-opacity duration-1000 delay-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          <div className={`md:w-1/2 mt-10 md:mt-0 flex justify-center items-center transition-opacity duration-1000 delay-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <div className="relative flex items-center justify-center">
               <div className="absolute -top-6 -left-6 w-20 h-20 bg-pastel-yellow rounded-full z-0"></div>
               <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-pastel-pink rounded-full z-0"></div>
-              <div className="relative z-10 w-72 h-72 rounded-full overflow-hidden border-4 border-black sticker-card p-1 bg-white flex items-center justify-center">
+              <div className="relative z-10 w-72 h-72 rounded-full overflow-hidden border-4 border-black sticker-card p-1 bg-white flex items-center justify-center shadow-lg">
                 <img
                   src={heroPhoto}
                   alt="Adnan Ahamed Farooqui"
-                  className="w-full h-full object-cover rounded-full"
+                  className="w-full h-full object-cover rounded-full object-top"
+                  style={{ backgroundColor: "#ffdee2" }}
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
-                  style={{objectPosition: "center top", backgroundColor: "#ffdee2"}}
                 />
               </div>
             </div>
@@ -314,11 +302,7 @@ const Index = () => {
         </div>
       </section>
       
-      <section 
-        id="about" 
-        className="py-20 bg-pastel-blue px-4 md:px-0"
-        ref={aboutRef}
-      >
+      <section id="about" className="py-20 bg-pastel-blue px-4 md:px-0" ref={aboutRef}>
         <div className={`container mx-auto transition-all duration-1000 ${aboutVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
             About <span className="text-primary">Me</span>
@@ -384,7 +368,7 @@ const Index = () => {
             Featured <span className="text-primary">Projects</span>
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Here's a closer look at some of the creative projects and brands I've brought to life—with an eye for impact, design, and growth.
+            Dive into some of my favorite projects, each one a little experiment in impact, design, and reaching real people.
           </p>
           <div className="flex justify-center mb-12 overflow-x-auto pb-4">
             <div className="flex space-x-2">
@@ -412,17 +396,14 @@ const Index = () => {
                 image={project.image}
                 link={project.link}
                 color={project.color}
+                imageLoading="eager"
               />
             ))}
           </div>
         </div>
       </section>
       
-      <section 
-        id="education" 
-        className="py-20 bg-pastel-purple px-4 md:px-0"
-        ref={educationRef}
-      >
+      <section id="education" className="py-20 bg-pastel-purple px-4 md:px-0" ref={educationRef}>
         <div className={`container mx-auto transition-all duration-1000 ${educationVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
             <span className="text-primary">Education</span>
@@ -540,11 +521,7 @@ const Index = () => {
         </div>
       </section>
       
-      <section 
-        id="contact" 
-        className="py-20 bg-pastel-green px-4 md:px-0"
-        ref={contactRef}
-      >
+      <section id="contact" className="py-20 bg-pastel-green px-4 md:px-0" ref={contactRef}>
         <div className={`container mx-auto transition-all duration-1000 ${contactVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
             Get In <span className="text-primary">Touch</span>
@@ -553,7 +530,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <a href="mailto:adnanahmedfarooqui@gmail.com" className="sticker-card p-6 flex flex-col items-center text-center hover-lift">
               <div className="bg-primary p-4 rounded-full text-white mb-4">
-                <Mail size={24} />
+                <Mail size={20} />
               </div>
               <h3 className="font-bold mb-2">Email</h3>
               <p className="text-gray-600">adnanahmedfarooqui@gmail.com</p>
@@ -561,7 +538,7 @@ const Index = () => {
             
             <a href="tel:+918690727572" className="sticker-card p-6 flex flex-col items-center text-center hover-lift">
               <div className="bg-primary p-4 rounded-full text-white mb-4">
-                <Phone size={24} />
+                <Phone size={20} />
               </div>
               <h3 className="font-bold mb-2">Phone</h3>
               <p className="text-gray-600">+91-8690727572</p>
@@ -569,7 +546,7 @@ const Index = () => {
             
             <a href="https://linkedin.com/in/adnan-ahamed-farooqui/" target="_blank" rel="noopener noreferrer" className="sticker-card p-6 flex flex-col items-center text-center hover-lift">
               <div className="bg-primary p-4 rounded-full text-white mb-4">
-                <Linkedin size={24} />
+                <Linkedin size={20} />
               </div>
               <h3 className="font-bold mb-2">LinkedIn</h3>
               <p className="text-gray-600">adnan-ahamed-farooqui</p>

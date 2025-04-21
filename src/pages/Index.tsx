@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Heart, Mail, Phone, MapPin, Linkedin, ExternalLink, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -9,221 +8,208 @@ import FloatingShapes from "@/components/FloatingShapes";
 import AnimatedText from "@/components/AnimatedText";
 import ScrollToTop from "@/components/ScrollToTop";
 
+const heroPhoto = "public/lovable-uploads/2280fb79-c359-4370-a903-15f4866b24da.png";
+
+const projects = [
+  {
+    id: 1,
+    title: "Clipsy (Assistive Tech Platform)",
+    description: "Clipsy is an AI-powered accessibility platform I helped design and build, focusing on making life easier for people with disabilities and seniors. This product was shaped by talking to real users and combining tech with empathy.",
+    image: "public/lovable-uploads/aa899d1a-1055-4896-829b-127e87af0314.png",
+    link: "https://clipsy-ai.netlify.app/",
+    category: "design",
+    color: "bg-pastel-blue",
+  },
+  {
+    id: 2,
+    title: "Eliteharbur (Shopify E-commerce Website)",
+    description: "I designed and launched a super-friendly e-commerce store for Eliteharbur on Shopify, making sure every detail was both beautiful and easy to use for shoppers.",
+    image: "public/lovable-uploads/4e583a2c-c699-4674-af8e-fc3603843c69.png",
+    link: "https://1bjvju-n0.myshopify.com",
+    category: "development",
+    color: "bg-pastel-pink",
+  },
+  {
+    id: 3,
+    title: "Capstone Project – Elder Care Startup",
+    description: "For my capstone, I created a thoughtful business plan for an elder care startup—integrating market research, empathy, and design thinking to truly address senior needs.",
+    image: "public/lovable-uploads/cb153add-3442-4377-99f1-8204667d3d10.png",
+    link: "https://www.canva.com/design/DAGcWV_xY-0/auL4BI6ZLSKRorTlikyzoA/edit?utm_content=DAGcWV_xY-0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+    category: "business",
+    color: "bg-pastel-purple",
+  },
+  {
+    id: 4,
+    title: "Brand Genesis – BotanIQ",
+    description: "For BotanIQ, I developed a fresh, organic brand identity and designed their Shopify website—helping them express their mission as a wellness brand in every pixel.",
+    image: "public/lovable-uploads/f87a21a8-9e85-4b35-b052-2d1ab4513aea.png",
+    link: "https://www.canva.com/design/DAGfJjAB924/a9ahSQYHvKcJM6mZi8rs5A/edit?utm_content=DAGfJjAB924&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+    category: "branding",
+    color: "bg-pastel-green",
+  },
+  {
+    id: 5,
+    title: "Business Analysis & Process Management (Coursera)",
+    description: "I completed this Coursera project where I mapped real business processes, optimized workflows, and actually used my analytics skills to make genuine improvements.",
+    image: "public/lovable-uploads/0bd77e57-f563-4e96-8551-83b3afa9cd4b.png",
+    link: "https://coursera.org/share/2ed4ccb6db4602de024b5beb556dff77",
+    category: "business",
+    color: "bg-pastel-yellow",
+  },
+  {
+    id: 6,
+    title: "Responsive Web Interface (Multi-Specialty Hospital)",
+    description: "Designed an intuitive, genuinely user-friendly landing page for a multi-specialty hospital—making accessibility and ease-of-use a top priority.",
+    image: "public/lovable-uploads/13bcaca4-50a6-4dd7-9f6a-067790f3316c.png",
+    link: "https://www.figma.com/design/xQfo4JD2pAdJ72yQNulIbw/MediVerse?node-id=0-1&t=6jz1CjFqbBPkMuyD-1",
+    category: "design",
+    color: "bg-pastel-peach",
+  },
+  {
+    id: 7,
+    title: "Plug It (EV Charging Startup)",
+    description: "I led a passionate team to win the SDG Hackathon by building a sustainable EV charging solution—balancing business sense with green ideals.",
+    image: "public/lovable-uploads/235f3220-7aa8-47fb-904e-fa3d27deab6f.png",
+    link: "https://www.canva.com/design/DAGRtb_1joA/muGtqJ2DYkv7h1ZGlZjXmA/edit?utm_content=DAGRtb_1joA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+    category: "business",
+    color: "bg-pastel-blue",
+  },
+  {
+    id: 8,
+    title: "Interplanetary Travel App Prototype (Figma)",
+    description: "Created a fun prototype for a space-travel app (think: Uber, but for the universe!), centering on design that’s both futuristic and super easy for users.",
+    image: "public/lovable-uploads/7a8396cf-0daa-43e2-a1db-02e276917477.png",
+    link: "https://www.figma.com/design/QbdK2rp95arptXRLtENCCP/Uber--multiverse-of-cabness---SPACESHIP?node-id=0-1&t=jr9JcCKEhEQmWUL3-1",
+    category: "design",
+    color: "bg-pastel-green",
+  },
+  {
+    id: 9,
+    title: "Vivah Brand Analysis",
+    description: "Audited Vivah’s social presence and created concrete strategies to really boost engagement and brand energy online.",
+    image: "public/lovable-uploads/7acb126c-f6fa-4025-bcdc-0ebdd159b471.png",
+    link: "https://www.canva.com/design/DAGeiIlsq3c/zYDg7k6ykXSEaJiSVxH-Gw/edit?utm_content=DAGeiIlsq3c&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+    category: "marketing",
+    color: "bg-pastel-pink",
+  },
+  {
+    id: 10,
+    title: "Email Marketing Lead Magnet Page (Kit.com)",
+    description: "Launched a high-conversion landing page on Kit.com—using creative content and automation to help brands grow their subscribers and nurture leads.",
+    image: "public/lovable-uploads/f8c1f701-9894-49e8-a076-0d7f2740b316.png",
+    link: "https://acessup.kit.com/367660ff99",
+    category: "marketing",
+    color: "bg-pastel-purple",
+  },
+  {
+    id: 11,
+    title: "Google Ads Campaign for Dinora (B2B Jeans Brand)",
+    description: "Managed a focused Google Ads campaign for Dinora jeans, taking the lead on creatives, bidding, and data analysis to boost B2B visibility.",
+    image: "public/lovable-uploads/2ecb84e9-f9e9-4fd8-a32d-bb12bb251e9b.png",
+    link: "https://gamma.app/docs/Google-Search-Campaign-for-Denora-Shop-dwct1zzka2rqcdb",
+    category: "marketing",
+    color: "bg-pastel-yellow",
+  },
+];
+
+const skills = [
+  { category: "Digital Marketing", skills: ["Meta Ads", "Google Ads", "SEO", "Social Media Strategy", "Content Creation", "Analytics", "Email Marketing", "WhatsApp Marketing"] },
+  { category: "Branding", skills: ["Brand Strategy", "Visual Identity", "Storytelling", "Logo Design", "Typography"] },
+  { category: "Business Development", skills: ["Market Research", "Business Model Innovation", "Investor Pitching", "Strategic Planning", "Go-to-Market Strategies"] },
+  { category: "Project Management", skills: ["Agile Project Planning", "Process Mapping", "Cross-functional Collaboration", "Team Leadership", "Event Management"] },
+  { category: "UI/UX Design", skills: ["Figma", "Canva", "Responsive Web Design", "User-Centric Prototyping", "Empathy Mapping", "Wireframing"] },
+  { category: "Content Creation", skills: ["Creative Writing", "Public Speaking", "Multimedia Production", "Persuasive Storytelling"] },
+  { category: "Data Analysis", skills: ["Excel", "Financial Statement Analysis", "Break-even Calculations", "Market Research", "Analytics"] },
+  { category: "Technical Tools", skills: ["Microsoft Office", "Trello", "Jira", "Shopify", "WordPress", "SEMrush", "Mixpanel", "Zapier", "n8n", "kit.com", "aisensy", "Google Analytics", "Workflow Automation"] },
+];
+
+const experiences = [
+  {
+    title: "Co-Founder",
+    company: "Clipsy",
+    duration: "Jan 2025 – Present",
+    description: [
+      "Spearheaded the conceptualization and design of an AI-powered assistive technology platform for people with disabilities and older adults.",
+      "Conducted 100+ user interviews to inform accessible and intuitive feature development.",
+      "Developed business strategy, investor pitches, and digital marketing campaigns to build early brand presence and community engagement."
+    ],
+    color: "blue"
+  },
+  {
+    title: "Business Student",
+    company: "Institute of Venture Building (IVB)",
+    duration: "Oct 2024 – Present",
+    description: [
+      "Led a winning team at the SDG Hackathon, developing a sustainable EV charging solution.",
+      "Conducted market research, strategic analysis, and collaborated with industry mentors to refine business models."
+    ],
+    color: "green"
+  },
+  {
+    title: "Apprentice",
+    company: "Pathways to Google",
+    duration: "May 2023 – Aug 2023",
+    description: [
+      "Completed hands-on training in product management and user experience design.",
+      "Worked on cross-functional projects, enhancing technical and leadership skills."
+    ],
+    color: "yellow"
+  },
+  {
+    title: "Freelance Content Creator",
+    company: "Self-employed",
+    duration: "Mar 2022 – Present",
+    description: [
+      "Designed and executed digital content strategies for startups and brands.",
+      "Produced multimedia content, managed content calendars, and optimized campaigns using analytics."
+    ],
+    color: "purple"
+  },
+  {
+    title: "Event Management Lead",
+    company: "Astitva, IIT Dhanbad",
+    duration: "Mar 2022 – Jan 2024",
+    description: [
+      "Organized and managed over 10 events promoting gender inclusivity and digital accessibility.",
+      "Designed digital campaigns and engaged 250+ participants per event."
+    ],
+    color: "pink"
+  }
+];
+
+const categories = [
+  { id: "all", name: "All Projects" },
+  { id: "design", name: "Design" },
+  { id: "development", name: "Development" },
+  { id: "business", name: "Business" },
+  { id: "marketing", name: "Marketing" },
+  { id: "branding", name: "Branding" },
+];
+
+const useOnScreen = (ref: React.RefObject<HTMLElement>) => {
+  const [isIntersecting, setIntersecting] = useState(false);
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        setIntersecting(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, [ref]);
+  return isIntersecting;
+};
+
 const Index = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [isVisible, setIsVisible] = useState(false);
-  
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  const projects = [
-    {
-      id: 1,
-      title: "Clipsy (Assistive Tech Platform)",
-      description: "Led product design and user research for an AI-powered platform supporting accessibility for people with disabilities and older adults.",
-      image: "public/lovable-uploads/6b033143-05e8-4e9c-9a0d-7234c80ec402.png",
-      link: "https://clipsy-ai.netlify.app/",
-      category: "design",
-      color: "bg-pastel-blue"
-    },
-    {
-      id: 2,
-      title: "BotanIQ (Brand Genesis)",
-      description: "Developed a complete brand identity and Shopify website for an organic wellness brand.",
-      image: "public/lovable-uploads/ece1e30b-b3df-429f-8677-d38d3bd9da43.png",
-      link: "https://www.canva.com/design/DAGfJjAB924/a9ahSQYHvKcJM6mZi8rs5A/edit?utm_content=DAGfJjAB924&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
-      category: "branding",
-      color: "bg-pastel-green"
-    },
-    {
-      id: 3,
-      title: "Eliteharbur (E-commerce Website)",
-      description: "Developed and deployed a branded, user-friendly e-commerce site on Shopify.",
-      image: "public/lovable-uploads/6c338fab-5f39-412d-88a9-a744ce5da94a.png",
-      link: "https://1bjvju-n0.myshopify.com",
-      category: "development",
-      color: "bg-pastel-pink"
-    },
-    {
-      id: 4,
-      title: "Elder Care Startup",
-      description: "Developed a comprehensive business plan for an elder care startup, integrating design thinking, market research, and financial projections.",
-      image: "public/lovable-uploads/9844355f-347a-4e24-8d59-db5473f5bdbc.png",
-      link: "https://www.canva.com/design/DAGcWV_xY-0/auL4BI6ZLSKRorTlikyzoA/edit?utm_content=DAGcWV_xY-0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
-      category: "business",
-      color: "bg-pastel-purple"
-    },
-    {
-      id: 5,
-      title: "Business Analysis & Process Management",
-      description: "Completed a Coursera project on process mapping, workflow optimization, and data-driven decision-making.",
-      image: "public/lovable-uploads/f4dffa29-d654-42b6-966c-19d366d70fc5.png",
-      link: "https://coursera.org/share/2ed4ccb6db4602de024b5beb556dff77",
-      category: "business",
-      color: "bg-pastel-yellow"
-    },
-    {
-      id: 6,
-      title: "Multi-Specialty Hospital Interface",
-      description: "Designed a user-centric landing page using Figma, improving accessibility and user experience.",
-      image: "public/lovable-uploads/e95b1ba3-40d0-4ae6-b12c-bf42ad4ff550.png",
-      link: "https://www.figma.com/design/xQfo4JD2pAdJ72yQNulIbw/MediVerse?node-id=0-1&t=6jz1CjFqbBPkMuyD-1",
-      category: "design",
-      color: "bg-pastel-peach"
-    },
-    {
-      id: 7,
-      title: "Plug It (EV Charging Startup)",
-      description: "Led a team to win the SDG Hackathon with a sustainable EV charging solution.",
-      image: "public/lovable-uploads/816cce49-0b75-4c1f-a5b0-76d55d594d28.png",
-      link: "https://www.canva.com/design/DAGRtb_1joA/muGtqJ2DYkv7h1ZGlZjXmA/edit?utm_content=DAGRtb_1joA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
-      category: "business",
-      color: "bg-pastel-blue"
-    },
-    {
-      id: 8,
-      title: "Interplanetary Travel App Prototype",
-      description: "Designed a prototype for a hypothetical interplanetary travel app (like Uber) using Figma, focusing on intuitive UI/UX and futuristic user journeys.",
-      image: "public/lovable-uploads/bd77cba2-d8ee-4e00-af6f-cd5e827b1ed0.png",
-      link: "https://www.figma.com/design/QbdK2rp95arptXRLtENCCP/Uber--multiverse-of-cabness---SPACESHIP?node-id=0-1&t=jr9JcCKEhEQmWUL3-1",
-      category: "design",
-      color: "bg-pastel-green"
-    },
-    {
-      id: 9,
-      title: "Vivah Brand Analysis",
-      description: "Audited social media presence and delivered strategic recommendations for engagement growth.",
-      image: "public/lovable-uploads/9f0f969e-f062-4312-be23-e1f3e0dc0bdd.png",
-      link: "https://www.canva.com/design/DAGeiIlsq3c/zYDg7k6ykXSEaJiSVxH-Gw/edit?utm_content=DAGeiIlsq3c&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
-      category: "marketing",
-      color: "bg-pastel-pink"
-    },
-    {
-      id: 10,
-      title: "Email Marketing Lead Magnet Page",
-      description: "Designed and launched a high-converting landing page on Kit.com for email marketing, featuring a lead magnet to capture subscribers and nurture leads through automated sequences.",
-      image: "public/lovable-uploads/9d6e8f7b-c493-439d-a756-8edbc56c01fb.png",
-      link: "https://acessup.kit.com/367660ff99",
-      category: "marketing",
-      color: "bg-pastel-purple"
-    },
-    {
-      id: 11,
-      title: "Google Ads Campaign for Dinora",
-      description: "Planned and executed a targeted Google Ads campaign for Dinora, a B2B jeans brand. Developed ad creatives, selected effective keywords, optimized bidding strategies, and analyzed campaign performance.",
-      image: "public/lovable-uploads/f9c2b0d5-ab5f-451a-814e-249d59ba4f81.png",
-      link: "https://gamma.app/docs/Google-Search-Campaign-for-Denora-Shop-dwct1zzka2rqcdb",
-      category: "marketing",
-      color: "bg-pastel-yellow"
-    }
-  ];
-
-  const skills = [
-    { category: "Digital Marketing", skills: ["Meta Ads", "Google Ads", "SEO", "Social Media Strategy", "Content Creation", "Analytics", "Email Marketing", "WhatsApp Marketing"] },
-    { category: "Branding", skills: ["Brand Strategy", "Visual Identity", "Storytelling", "Logo Design", "Typography"] },
-    { category: "Business Development", skills: ["Market Research", "Business Model Innovation", "Investor Pitching", "Strategic Planning", "Go-to-Market Strategies"] },
-    { category: "Project Management", skills: ["Agile Project Planning", "Process Mapping", "Cross-functional Collaboration", "Team Leadership", "Event Management"] },
-    { category: "UI/UX Design", skills: ["Figma", "Canva", "Responsive Web Design", "User-Centric Prototyping", "Empathy Mapping", "Wireframing"] },
-    { category: "Content Creation", skills: ["Creative Writing", "Public Speaking", "Multimedia Production", "Persuasive Storytelling"] },
-    { category: "Data Analysis", skills: ["Excel", "Financial Statement Analysis", "Break-even Calculations", "Market Research", "Analytics"] },
-    { category: "Technical Tools", skills: ["Microsoft Office", "Trello", "Jira", "Shopify", "WordPress", "SEMrush", "Mixpanel", "Zapier", "n8n", "kit.com", "aisensy", "Google Analytics", "Workflow Automation"] },
-  ]
-
-  const experiences = [
-    {
-      title: "Co-Founder",
-      company: "Clipsy",
-      duration: "Jan 2025 – Present",
-      description: [
-        "Spearheaded the conceptualization and design of an AI-powered assistive technology platform for people with disabilities and older adults.",
-        "Conducted 100+ user interviews to inform accessible and intuitive feature development.",
-        "Developed business strategy, investor pitches, and digital marketing campaigns to build early brand presence and community engagement."
-      ],
-      color: "blue"
-    },
-    {
-      title: "Business Student",
-      company: "Institute of Venture Building (IVB)",
-      duration: "Oct 2024 – Present",
-      description: [
-        "Led a winning team at the SDG Hackathon, developing a sustainable EV charging solution.",
-        "Conducted market research, strategic analysis, and collaborated with industry mentors to refine business models."
-      ],
-      color: "green"
-    },
-    {
-      title: "Apprentice",
-      company: "Pathways to Google",
-      duration: "May 2023 – Aug 2023",
-      description: [
-        "Completed hands-on training in product management and user experience design.",
-        "Worked on cross-functional projects, enhancing technical and leadership skills."
-      ],
-      color: "yellow"
-    },
-    {
-      title: "Freelance Content Creator",
-      company: "Self-employed",
-      duration: "Mar 2022 – Present",
-      description: [
-        "Designed and executed digital content strategies for startups and brands.",
-        "Produced multimedia content, managed content calendars, and optimized campaigns using analytics."
-      ],
-      color: "purple"
-    },
-    {
-      title: "Event Management Lead",
-      company: "Astitva, IIT Dhanbad",
-      duration: "Mar 2022 – Jan 2024",
-      description: [
-        "Organized and managed over 10 events promoting gender inclusivity and digital accessibility.",
-        "Designed digital campaigns and engaged 250+ participants per event."
-      ],
-      color: "pink"
-    }
-  ];
-
-  const filteredProjects = activeTab === "all" 
-    ? projects 
-    : projects.filter(project => project.category === activeTab);
-
-  const categories = [
-    { id: "all", name: "All Projects" },
-    { id: "design", name: "Design" },
-    { id: "development", name: "Development" },
-    { id: "business", name: "Business" },
-    { id: "marketing", name: "Marketing" },
-    { id: "branding", name: "Branding" },
-  ];
-
-  // Function to check if element is in viewport
-  const useOnScreen = (ref: React.RefObject<HTMLElement>) => {
-    const [isIntersecting, setIntersecting] = useState(false);
-  
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setIntersecting(entry.isIntersecting);
-        },
-        { threshold: 0.1 }
-      );
-      
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-      
-      return () => {
-        if (ref.current) {
-          observer.unobserve(ref.current);
-        }
-      };
-    }, [ref]);
-    
-    return isIntersecting;
-  };
-
-  // Create refs for each section
   const aboutRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLElement>(null);
   const experienceRef = useRef<HTMLElement>(null);
@@ -231,8 +217,7 @@ const Index = () => {
   const educationRef = useRef<HTMLElement>(null);
   const achievementsRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
-  
-  // Check if sections are visible
+
   const aboutVisible = useOnScreen(aboutRef);
   const skillsVisible = useOnScreen(skillsRef);
   const experienceVisible = useOnScreen(experienceRef);
@@ -241,50 +226,56 @@ const Index = () => {
   const achievementsVisible = useOnScreen(achievementsRef);
   const contactVisible = useOnScreen(contactRef);
 
+  const filteredProjects = activeTab === "all"
+    ? projects
+    : projects.filter(project => project.category === activeTab);
+
   return (
     <div className="min-h-screen bg-white">
       <FloatingShapes />
       <ScrollToTop />
       <Navbar />
-      
-      {/* Hero Section */}
+
       <section id="hero" className="pt-32 pb-20 px-4 md:px-0">
         <div className="container mx-auto flex flex-col md:flex-row items-center">
           <div className={`md:w-1/2 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Hi, I'm <AnimatedText text="Adnan" speed={150} className="text-primary" /> 👋
+              Hi, I'm <AnimatedText text="Adnan" speed={125} className="text-primary" /> 👋
             </h1>
             <div className="h-1 w-20 bg-black mb-6"></div>
-            <h2 className="text-xl md:text-2xl mb-6">
-              <AnimatedText text="Entrepreneur & Digital Marketing Specialist" speed={50} />
+            <h2 className="text-xl md:text-2xl mb-6 text-primary">
+              <AnimatedText text="Turning creative ideas into impact, digitally." speed={54} />
             </h2>
-            <p className="text-gray-600 mb-8 max-w-md">
-              I combine creativity with data-driven strategies to help businesses grow through innovative digital solutions.
+            <p className="text-gray-600 mb-8 max-w-md leading-relaxed">
+              Welcome! I’m a business student and entrepreneur who genuinely enjoys making a difference with design, strategy, and marketing. If you love creative projects (and friendly vibes), let’s connect and build something great together.
             </p>
             <div className="flex space-x-4">
               <a 
                 href="#contact" 
-                className="sticker-button bg-primary text-white"
+                className="sticker-button bg-primary text-white hover-scale"
               >
                 Contact Me
               </a>
               <a 
                 href="#projects" 
-                className="sticker-button bg-white"
+                className="sticker-button bg-white hover-scale"
               >
                 See My Work
               </a>
             </div>
           </div>
           <div className={`md:w-1/2 mt-10 md:mt-0 flex justify-center transition-opacity duration-1000 delay-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-            <div className="relative">
+            <div className="relative flex items-center justify-center">
               <div className="absolute -top-6 -left-6 w-20 h-20 bg-pastel-yellow rounded-full z-0"></div>
               <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-pastel-pink rounded-full z-0"></div>
-              <div className="relative z-10 w-72 h-72 rounded-full overflow-hidden border-4 border-black sticker-card p-1 bg-white">
-                <img 
-                  src="public/lovable-uploads/bc63cc3d-34e0-4126-b68e-0c84088f5e0d.png" 
-                  alt="Adnan Ahamed Farooqui" 
+              <div className="relative z-10 w-72 h-72 rounded-full overflow-hidden border-4 border-black sticker-card p-1 bg-white flex items-center justify-center">
+                <img
+                  src={heroPhoto}
+                  alt="Adnan Ahamed Farooqui"
                   className="w-full h-full object-cover rounded-full"
+                  loading="eager"
+                  decoding="async"
+                  style={{objectPosition: "center top", backgroundColor: "#ffdee2"}}
                 />
               </div>
             </div>
@@ -292,7 +283,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* About Section */}
       <section 
         id="about" 
         className="py-20 bg-pastel-blue px-4 md:px-0"
@@ -304,22 +294,20 @@ const Index = () => {
           </h2>
           <div className="sticker-card bg-white p-8 max-w-3xl mx-auto">
             <p className="text-lg mb-6">
-              I am a dynamic entrepreneur and business student with a strong foundation in digital marketing, business development, and project management. My expertise includes executing data-driven marketing strategies (Meta ads, SEO), leading complex projects from ideation to implementation, and driving initiatives that foster sustainable growth.
+              I’m passionate about blending creativity, business sense, and technology to solve real problems for real people. My superpowers? Leading data-driven marketing, building playful brands, and taking projects from “just an idea” to full launch—always with a user-first mindset.
             </p>
             <p className="text-lg">
-              I am passionate about leveraging technology and innovation to create inclusive, high-impact business solutions that make a difference in people's lives. Currently pursuing my education at the Institute of Venture Building (IVB) and SRM Institute of Science and Technology, I combine academic knowledge with practical experience to create innovative solutions to real-world problems.
+              Right now I’m studying Entrepreneurship at IVB and Computer Applications at SRM, but the biggest lessons often come from collaborating with amazing people and tackling new challenges head-on.
             </p>
           </div>
         </div>
       </section>
       
-      {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 md:px-0">
+      <section id="skills" ref={skillsRef} className="py-20 px-4 md:px-0">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
             My <span className="text-primary">Skills</span>
           </h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {skills.map((skillGroup, index) => (
               <div key={index} className="sticker-card p-6">
@@ -327,9 +315,9 @@ const Index = () => {
                 <div className="flex flex-wrap">
                   {skillGroup.skills.map((skill, skillIndex) => (
                     <SkillTag 
-                      key={skillIndex} 
-                      skill={skill} 
-                      color={["blue", "pink", "purple", "yellow", "green", "peach"][skillIndex % 6]} 
+                      key={skillIndex}
+                      skill={skill}
+                      color={["blue", "pink", "purple", "yellow", "green", "peach"][skillIndex % 6]}
                     />
                   ))}
                 </div>
@@ -339,13 +327,11 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Experience Section */}
-      <section id="experience" className="py-20 bg-pastel-pink px-4 md:px-0">
+      <section id="experience" className="py-20 bg-pastel-pink px-4 md:px-0" ref={experienceRef}>
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
             Work <span className="text-primary">Experience</span>
           </h2>
-          
           <div className="max-w-3xl mx-auto">
             {experiences.map((experience, index) => (
               <ExperienceCard
@@ -361,16 +347,14 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 md:px-0">
+      <section id="projects" className="py-20 px-4 md:px-0" ref={projectsRef}>
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
             Featured <span className="text-primary">Projects</span>
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            A selection of my recent work across design, development, and digital marketing.
+            Here’s a closer look at some of the creative projects and brands I’ve brought to life—with an eye for impact, design, and growth.
           </p>
-          
           <div className="flex justify-center mb-12 overflow-x-auto pb-4">
             <div className="flex space-x-2">
               {categories.map((category) => (
@@ -388,23 +372,36 @@ const Index = () => {
               ))}
             </div>
           </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                title={project.title}
-                description={project.description}
-                image={project.image}
-                link={project.link}
-                color={project.color}
-              />
+              <div key={project.id} className="flex flex-col">
+                <div className="sticker-card overflow-hidden hover-lift cursor-pointer h-full flex flex-col"
+                  onClick={() => window.open(project.link, "_blank")}
+                  style={{ backgroundColor: "var(--card)", boxShadow: "4px 4px 0 0 #222" }}
+                >
+                  <div className="h-48 overflow-hidden relative group flex-shrink-0">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover rounded-t-xl transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ExternalLink className="text-white" size={24} />
+                    </div>
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <p className="text-gray-600 flex-1">{project.description}</p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
       
-      {/* Education Section */}
       <section 
         id="education" 
         className="py-20 bg-pastel-purple px-4 md:px-0"
@@ -446,13 +443,11 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Achievements Section */}
-      <section id="achievements" className="py-20 px-4 md:px-0">
+      <section id="achievements" className="py-20 px-4 md:px-0" ref={achievementsRef}>
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
             Awards & <span className="text-primary">Achievements</span>
           </h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <div className="sticker-card p-6 hover-lift">
               <div className="flex items-center mb-4">
@@ -506,7 +501,7 @@ const Index = () => {
               <div className="flex items-center mb-4">
                 <div className="bg-pastel-purple p-3 rounded-full mr-4">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
                   </svg>
                 </div>
                 <h3 className="text-lg font-bold">SDG Hackathon Winner</h3>
@@ -529,7 +524,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Contact Section */}
       <section 
         id="contact" 
         className="py-20 bg-pastel-green px-4 md:px-0"
@@ -565,21 +559,9 @@ const Index = () => {
               <p className="text-gray-600">adnan-ahamed-farooqui</p>
             </a>
           </div>
-          
-          <div className="mt-16 text-center">
-            <p className="text-lg mb-6">
-              Located in <span className="font-bold">Chennai, Tamil Nadu, India</span>
-            </p>
-            
-            <div className="sticker-card p-6 bg-white inline-flex items-center">
-              <MapPin className="mr-2" />
-              <span>Chennai, Tamil Nadu, India</span>
-            </div>
-          </div>
         </div>
       </section>
       
-      {/* Footer */}
       <footer className="py-8 bg-gray-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-4">© {new Date().getFullYear()} Adnan Ahamed Farooqui. All rights reserved.</p>
@@ -597,9 +579,6 @@ const Index = () => {
               <ExternalLink size={20} />
             </a>
           </div>
-          <p className="mt-4 text-sm text-gray-400">
-            Made with ❤️ and React
-          </p>
         </div>
       </footer>
     </div>

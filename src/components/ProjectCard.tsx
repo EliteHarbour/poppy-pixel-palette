@@ -12,9 +12,14 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, image, link, color }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   
   const handleClick = () => {
     window.open(link, '_blank');
+  };
+  
+  const handleImageLoad = () => {
+    setImageLoaded(true);
   };
   
   return (
@@ -25,10 +30,16 @@ const ProjectCard = ({ title, description, image, link, color }: ProjectCardProp
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="h-48 overflow-hidden relative group">
+        <div className={`w-full h-full bg-gray-100 flex items-center justify-center ${imageLoaded ? 'hidden' : 'block'}`}>
+          <div className="animate-pulse rounded-full h-12 w-12 bg-gray-200"></div>
+        </div>
         <img 
           src={image} 
           alt={title} 
-          className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-110' : 'scale-100'}`} 
+          className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-110' : 'scale-100'} ${imageLoaded ? 'block' : 'hidden'}`} 
+          loading="lazy"
+          onLoad={handleImageLoad}
+          decoding="async"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
           <ExternalLink className="text-white" size={24} />

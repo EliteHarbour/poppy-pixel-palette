@@ -8,14 +8,14 @@ import FloatingShapes from "@/components/FloatingShapes";
 import AnimatedText from "@/components/AnimatedText";
 import ScrollToTop from "@/components/ScrollToTop";
 
-const heroPhoto = "public/lovable-uploads/2280fb79-c359-4370-a903-15f4866b24da.png";
+const heroPhoto = "/lovable-uploads/2280fb79-c359-4370-a903-15f4866b24da.png";
 
 const projects = [
   {
     id: 1,
     title: "Clipsy (Assistive Tech Platform)",
     description: "Clipsy is an AI-powered accessibility platform I helped design and build, focusing on making life easier for people with disabilities and seniors. This product was shaped by talking to real users and combining tech with empathy.",
-    image: "public/lovable-uploads/aa899d1a-1055-4896-829b-127e87af0314.png",
+    image: "/lovable-uploads/aa899d1a-1055-4896-829b-127e87af0314.png",
     link: "https://clipsy-ai.netlify.app/",
     category: "design",
     color: "bg-pastel-blue",
@@ -24,7 +24,7 @@ const projects = [
     id: 2,
     title: "Eliteharbur (Shopify E-commerce Website)",
     description: "I designed and launched a super-friendly e-commerce store for Eliteharbur on Shopify, making sure every detail was both beautiful and easy to use for shoppers.",
-    image: "public/lovable-uploads/4e583a2c-c699-4674-af8e-fc3603843c69.png",
+    image: "/lovable-uploads/4e583a2c-c699-4674-af8e-fc3603843c69.png",
     link: "https://1bjvju-n0.myshopify.com",
     category: "development",
     color: "bg-pastel-pink",
@@ -33,7 +33,7 @@ const projects = [
     id: 3,
     title: "Capstone Project – Elder Care Startup",
     description: "For my capstone, I created a thoughtful business plan for an elder care startup—integrating market research, empathy, and design thinking to truly address senior needs.",
-    image: "public/lovable-uploads/cb153add-3442-4377-99f1-8204667d3d10.png",
+    image: "/lovable-uploads/cb153add-3442-4377-99f1-8204667d3d10.png",
     link: "https://www.canva.com/design/DAGcWV_xY-0/auL4BI6ZLSKRorTlikyzoA/edit?utm_content=DAGcWV_xY-0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "business",
     color: "bg-pastel-purple",
@@ -42,7 +42,7 @@ const projects = [
     id: 4,
     title: "Brand Genesis – BotanIQ",
     description: "For BotanIQ, I developed a fresh, organic brand identity and designed their Shopify website—helping them express their mission as a wellness brand in every pixel.",
-    image: "public/lovable-uploads/f87a21a8-9e85-4b35-b052-2d1ab4513aea.png",
+    image: "/lovable-uploads/f87a21a8-9e85-4b35-b052-2d1ab4513aea.png",
     link: "https://www.canva.com/design/DAGfJjAB924/a9ahSQYHvKcJM6mZi8rs5A/edit?utm_content=DAGfJjAB924&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "branding",
     color: "bg-pastel-green",
@@ -51,7 +51,7 @@ const projects = [
     id: 5,
     title: "Business Analysis & Process Management (Coursera)",
     description: "I completed this Coursera project where I mapped real business processes, optimized workflows, and actually used my analytics skills to make genuine improvements.",
-    image: "public/lovable-uploads/0bd77e57-f563-4e96-8551-83b3afa9cd4b.png",
+    image: "/lovable-uploads/0bd77e57-f563-4e96-8551-83b3afa9cd4b.png",
     link: "https://coursera.org/share/2ed4ccb6db4602de024b5beb556dff77",
     category: "business",
     color: "bg-pastel-yellow",
@@ -60,7 +60,7 @@ const projects = [
     id: 6,
     title: "Responsive Web Interface (Multi-Specialty Hospital)",
     description: "Designed an intuitive, genuinely user-friendly landing page for a multi-specialty hospital—making accessibility and ease-of-use a top priority.",
-    image: "public/lovable-uploads/13bcaca4-50a6-4dd7-9f6a-067790f3316c.png",
+    image: "/lovable-uploads/13bcaca4-50a6-4dd7-9f6a-067790f3316c.png",
     link: "https://www.figma.com/design/xQfo4JD2pAdJ72yQNulIbw/MediVerse?node-id=0-1&t=6jz1CjFqbBPkMuyD-1",
     category: "design",
     color: "bg-pastel-peach",
@@ -69,7 +69,7 @@ const projects = [
     id: 7,
     title: "Plug It (EV Charging Startup)",
     description: "I led a passionate team to win the SDG Hackathon by building a sustainable EV charging solution—balancing business sense with green ideals.",
-    image: "public/lovable-uploads/235f3220-7aa8-47fb-904e-fa3d27deab6f.png",
+    image: "/lovable-uploads/235f3220-7aa8-47fb-904e-fa3d27deab6f.png",
     link: "https://www.canva.com/design/DAGRtb_1joA/muGtqJ2DYkv7h1ZGlZjXmA/edit?utm_content=DAGRtb_1joA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "business",
     color: "bg-pastel-blue",
@@ -77,8 +77,8 @@ const projects = [
   {
     id: 8,
     title: "Interplanetary Travel App Prototype (Figma)",
-    description: "Created a fun prototype for a space-travel app (think: Uber, but for the universe!), centering on design that’s both futuristic and super easy for users.",
-    image: "public/lovable-uploads/7a8396cf-0daa-43e2-a1db-02e276917477.png",
+    description: "Created a fun prototype for a space-travel app (think: Uber, but for the universe!), centering on design that's both futuristic and super easy for users.",
+    image: "/lovable-uploads/7a8396cf-0daa-43e2-a1db-02e276917477.png",
     link: "https://www.figma.com/design/QbdK2rp95arptXRLtENCCP/Uber--multiverse-of-cabness---SPACESHIP?node-id=0-1&t=jr9JcCKEhEQmWUL3-1",
     category: "design",
     color: "bg-pastel-green",
@@ -86,8 +86,8 @@ const projects = [
   {
     id: 9,
     title: "Vivah Brand Analysis",
-    description: "Audited Vivah’s social presence and created concrete strategies to really boost engagement and brand energy online.",
-    image: "public/lovable-uploads/7acb126c-f6fa-4025-bcdc-0ebdd159b471.png",
+    description: "Audited Vivah's social presence and created concrete strategies to really boost engagement and brand energy online.",
+    image: "/lovable-uploads/7acb126c-f6fa-4025-bcdc-0ebdd159b471.png",
     link: "https://www.canva.com/design/DAGeiIlsq3c/zYDg7k6ykXSEaJiSVxH-Gw/edit?utm_content=DAGeiIlsq3c&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "marketing",
     color: "bg-pastel-pink",
@@ -96,7 +96,7 @@ const projects = [
     id: 10,
     title: "Email Marketing Lead Magnet Page (Kit.com)",
     description: "Launched a high-conversion landing page on Kit.com—using creative content and automation to help brands grow their subscribers and nurture leads.",
-    image: "public/lovable-uploads/f8c1f701-9894-49e8-a076-0d7f2740b316.png",
+    image: "/lovable-uploads/f8c1f701-9894-49e8-a076-0d7f2740b316.png",
     link: "https://acessup.kit.com/367660ff99",
     category: "marketing",
     color: "bg-pastel-purple",
@@ -105,7 +105,7 @@ const projects = [
     id: 11,
     title: "Google Ads Campaign for Dinora (B2B Jeans Brand)",
     description: "Managed a focused Google Ads campaign for Dinora jeans, taking the lead on creatives, bidding, and data analysis to boost B2B visibility.",
-    image: "public/lovable-uploads/2ecb84e9-f9e9-4fd8-a32d-bb12bb251e9b.png",
+    image: "/lovable-uploads/2ecb84e9-f9e9-4fd8-a32d-bb12bb251e9b.png",
     link: "https://gamma.app/docs/Google-Search-Campaign-for-Denora-Shop-dwct1zzka2rqcdb",
     category: "marketing",
     color: "bg-pastel-yellow",
@@ -206,8 +206,15 @@ const useOnScreen = (ref: React.RefObject<HTMLElement>) => {
 const Index = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [isVisible, setIsVisible] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  
   useEffect(() => {
     setIsVisible(true);
+    
+    // Preload hero image
+    const preloadHeroImage = new Image();
+    preloadHeroImage.src = heroPhoto;
+    preloadHeroImage.onload = () => setImagesLoaded(true);
   }, []);
 
   const aboutRef = useRef<HTMLElement>(null);
@@ -244,10 +251,10 @@ const Index = () => {
             </h1>
             <div className="h-1 w-20 bg-black mb-6"></div>
             <h2 className="text-xl md:text-2xl mb-6 text-primary">
-              <AnimatedText text="Turning creative ideas into impact, digitally." speed={54} />
+              <AnimatedText text="Business student with passion for innovation, Digital Marketer, UI/UX Designer & Brand Strategist." speed={54} />
             </h2>
             <p className="text-gray-600 mb-8 max-w-md leading-relaxed">
-              Welcome! I’m a business student and entrepreneur who genuinely enjoys making a difference with design, strategy, and marketing. If you love creative projects (and friendly vibes), let’s connect and build something great together.
+              Welcome! I'm a business student and entrepreneur who genuinely enjoys making a difference with design, strategy, and marketing. If you love creative projects (and friendly vibes), let's connect and build something great together.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -274,6 +281,7 @@ const Index = () => {
                   alt="Adnan Ahamed Farooqui"
                   className="w-full h-full object-cover rounded-full"
                   loading="eager"
+                  fetchpriority="high"
                   decoding="async"
                   style={{objectPosition: "center top", backgroundColor: "#ffdee2"}}
                 />
@@ -353,7 +361,7 @@ const Index = () => {
             Featured <span className="text-primary">Projects</span>
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Here’s a closer look at some of the creative projects and brands I’ve brought to life—with an eye for impact, design, and growth.
+            Here's a closer look at some of the creative projects and brands I've brought to life—with an eye for impact, design, and growth.
           </p>
           <div className="flex justify-center mb-12 overflow-x-auto pb-4">
             <div className="flex space-x-2">
@@ -374,29 +382,14 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <div key={project.id} className="flex flex-col">
-                <div className="sticker-card overflow-hidden hover-lift cursor-pointer h-full flex flex-col"
-                  onClick={() => window.open(project.link, "_blank")}
-                  style={{ backgroundColor: "var(--card)", boxShadow: "4px 4px 0 0 #222" }}
-                >
-                  <div className="h-48 overflow-hidden relative group flex-shrink-0">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover rounded-t-xl transition-transform duration-500 group-hover:scale-110"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <ExternalLink className="text-white" size={24} />
-                    </div>
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-gray-600 flex-1">{project.description}</p>
-                  </div>
-                </div>
-              </div>
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                link={project.link}
+                color={project.color}
+              />
             ))}
           </div>
         </div>
@@ -477,7 +470,7 @@ const Index = () => {
               <div className="flex items-center mb-4">
                 <div className="bg-pastel-blue p-3 rounded-full mr-4">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0 3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
                   </svg>
                 </div>
                 <h3 className="text-lg font-bold">Top 10% in NSEJS</h3>

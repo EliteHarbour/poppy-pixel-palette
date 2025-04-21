@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { Heart, Mail, Phone, MapPin, Linkedin, ExternalLink, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -8,14 +9,15 @@ import FloatingShapes from "@/components/FloatingShapes";
 import AnimatedText from "@/components/AnimatedText";
 import ScrollToTop from "@/components/ScrollToTop";
 
-const heroPhoto = "/lovable-uploads/2280fb79-c359-4370-a903-15f4866b24da.png";
+// Hero photo - using the new image you provided
+const heroPhoto = "/lovable-uploads/b7213a9b-69ed-47d1-addf-5f9f5654cd83.png";
 
 const projects = [
   {
     id: 1,
     title: "Clipsy (Assistive Tech Platform)",
     description: "Clipsy is an AI-powered accessibility platform I helped design and build, focusing on making life easier for people with disabilities and seniors. This product was shaped by talking to real users and combining tech with empathy.",
-    image: "/lovable-uploads/aa899d1a-1055-4896-829b-127e87af0314.png",
+    image: "/lovable-uploads/156c91ab-7d06-49ef-ad9d-e562799d28fb.png",
     link: "https://clipsy-ai.netlify.app/",
     category: "design",
     color: "bg-pastel-blue",
@@ -23,8 +25,8 @@ const projects = [
   {
     id: 2,
     title: "Eliteharbur (Shopify E-commerce Website)",
-    description: "I designed and launched a super-friendly e-commerce store for Eliteharbur on Shopify, making sure every detail was both beautiful and easy to use for shoppers.",
-    image: "/lovable-uploads/4e583a2c-c699-4674-af8e-fc3603843c69.png",
+    description: "Developed and deployed a branded, user-friendly e-commerce site on Shopify.",
+    image: "/lovable-uploads/ab6e591f-333e-401d-af9a-199b4e78b60e.png",
     link: "https://1bjvju-n0.myshopify.com",
     category: "development",
     color: "bg-pastel-pink",
@@ -32,8 +34,8 @@ const projects = [
   {
     id: 3,
     title: "Capstone Project – Elder Care Startup",
-    description: "For my capstone, I created a thoughtful business plan for an elder care startup—integrating market research, empathy, and design thinking to truly address senior needs.",
-    image: "/lovable-uploads/cb153add-3442-4377-99f1-8204667d3d10.png",
+    description: "Developed a comprehensive business plan for an elder care startup, integrating design thinking, market research, and financial projections.",
+    image: "/lovable-uploads/0f0dcb4c-a86e-4e03-92fb-c25369c58c9f.png",
     link: "https://www.canva.com/design/DAGcWV_xY-0/auL4BI6ZLSKRorTlikyzoA/edit?utm_content=DAGcWV_xY-0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "business",
     color: "bg-pastel-purple",
@@ -42,7 +44,7 @@ const projects = [
     id: 4,
     title: "Brand Genesis – BotanIQ",
     description: "For BotanIQ, I developed a fresh, organic brand identity and designed their Shopify website—helping them express their mission as a wellness brand in every pixel.",
-    image: "/lovable-uploads/f87a21a8-9e85-4b35-b052-2d1ab4513aea.png",
+    image: "/lovable-uploads/01314520-7fb1-4bbd-8856-63cdda87c3d4.png",
     link: "https://www.canva.com/design/DAGfJjAB924/a9ahSQYHvKcJM6mZi8rs5A/edit?utm_content=DAGfJjAB924&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "branding",
     color: "bg-pastel-green",
@@ -50,8 +52,8 @@ const projects = [
   {
     id: 5,
     title: "Business Analysis & Process Management (Coursera)",
-    description: "I completed this Coursera project where I mapped real business processes, optimized workflows, and actually used my analytics skills to make genuine improvements.",
-    image: "/lovable-uploads/0bd77e57-f563-4e96-8551-83b3afa9cd4b.png",
+    description: "Completed a Coursera project on process mapping, workflow optimization, and data-driven decision-making.",
+    image: "/lovable-uploads/11725915-2239-4312-a3a2-d6189d1b779c.png",
     link: "https://coursera.org/share/2ed4ccb6db4602de024b5beb556dff77",
     category: "business",
     color: "bg-pastel-yellow",
@@ -59,8 +61,8 @@ const projects = [
   {
     id: 6,
     title: "Responsive Web Interface (Multi-Specialty Hospital)",
-    description: "Designed an intuitive, genuinely user-friendly landing page for a multi-specialty hospital—making accessibility and ease-of-use a top priority.",
-    image: "/lovable-uploads/13bcaca4-50a6-4dd7-9f6a-067790f3316c.png",
+    description: "Designed a user-centric landing page using Figma, improving accessibility and user experience.",
+    image: "/lovable-uploads/c63bd646-3ef5-4a76-8f3c-f2d2d1cfda37.png",
     link: "https://www.figma.com/design/xQfo4JD2pAdJ72yQNulIbw/MediVerse?node-id=0-1&t=6jz1CjFqbBPkMuyD-1",
     category: "design",
     color: "bg-pastel-peach",
@@ -68,8 +70,8 @@ const projects = [
   {
     id: 7,
     title: "Plug It (EV Charging Startup)",
-    description: "I led a passionate team to win the SDG Hackathon by building a sustainable EV charging solution—balancing business sense with green ideals.",
-    image: "/lovable-uploads/235f3220-7aa8-47fb-904e-fa3d27deab6f.png",
+    description: "Led a team to win the SDG Hackathon with a sustainable EV charging solution.",
+    image: "/lovable-uploads/74cad96e-dccd-4d2f-8c92-2c37375ff2b9.png",
     link: "https://www.canva.com/design/DAGRtb_1joA/muGtqJ2DYkv7h1ZGlZjXmA/edit?utm_content=DAGRtb_1joA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "business",
     color: "bg-pastel-blue",
@@ -77,8 +79,8 @@ const projects = [
   {
     id: 8,
     title: "Interplanetary Travel App Prototype (Figma)",
-    description: "Created a fun prototype for a space-travel app (think: Uber, but for the universe!), centering on design that's both futuristic and super easy for users.",
-    image: "/lovable-uploads/7a8396cf-0daa-43e2-a1db-02e276917477.png",
+    description: "Designed a prototype for a hypothetical interplanetary travel app (like Uber) using Figma. Focused on intuitive UI/UX for booking space journeys, integrating futuristic design elements, user flows.",
+    image: "/lovable-uploads/996cfe28-d5be-43f3-a5f4-ee7297d5aebc.png",
     link: "https://www.figma.com/design/QbdK2rp95arptXRLtENCCP/Uber--multiverse-of-cabness---SPACESHIP?node-id=0-1&t=jr9JcCKEhEQmWUL3-1",
     category: "design",
     color: "bg-pastel-green",
@@ -86,8 +88,8 @@ const projects = [
   {
     id: 9,
     title: "Vivah Brand Analysis",
-    description: "Audited Vivah's social presence and created concrete strategies to really boost engagement and brand energy online.",
-    image: "/lovable-uploads/7acb126c-f6fa-4025-bcdc-0ebdd159b471.png",
+    description: "Audited social media presence and delivered strategic recommendations for engagement growth.",
+    image: "/lovable-uploads/ad28dc0e-b628-4f15-a3f8-0ad76ae3f0b1.png",
     link: "https://www.canva.com/design/DAGeiIlsq3c/zYDg7k6ykXSEaJiSVxH-Gw/edit?utm_content=DAGeiIlsq3c&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "marketing",
     color: "bg-pastel-pink",
@@ -95,8 +97,8 @@ const projects = [
   {
     id: 10,
     title: "Email Marketing Lead Magnet Page (Kit.com)",
-    description: "Launched a high-conversion landing page on Kit.com—using creative content and automation to help brands grow their subscribers and nurture leads.",
-    image: "/lovable-uploads/f8c1f701-9894-49e8-a076-0d7f2740b316.png",
+    description: "Designed and launched a high-converting landing page on Kit.com for email marketing, featuring a lead magnet to capture subscribers and nurture leads through automated sequences.",
+    image: "/lovable-uploads/334ea24c-b3c0-4587-bf8a-31a0d9759916.png",
     link: "https://acessup.kit.com/367660ff99",
     category: "marketing",
     color: "bg-pastel-purple",
@@ -104,8 +106,8 @@ const projects = [
   {
     id: 11,
     title: "Google Ads Campaign for Dinora (B2B Jeans Brand)",
-    description: "Managed a focused Google Ads campaign for Dinora jeans, taking the lead on creatives, bidding, and data analysis to boost B2B visibility.",
-    image: "/lovable-uploads/2ecb84e9-f9e9-4fd8-a32d-bb12bb251e9b.png",
+    description: "Planned and executed a targeted Google Ads campaign for Dinora, a B2B jeans brand. Developed ad creatives, selected effective keywords, optimized bidding strategies, and analyzed campaign performance to generate high-quality business leads and increase brand visibility in the B2B apparel market.",
+    image: "/lovable-uploads/ffd25e7d-0b7d-49b5-b032-09f2c43f4d2c.png",
     link: "https://gamma.app/docs/Google-Search-Campaign-for-Denora-Shop-dwct1zzka2rqcdb",
     category: "marketing",
     color: "bg-pastel-yellow",
@@ -211,10 +213,31 @@ const Index = () => {
   useEffect(() => {
     setIsVisible(true);
     
-    // Preload hero image
-    const preloadHeroImage = new Image();
-    preloadHeroImage.src = heroPhoto;
-    preloadHeroImage.onload = () => setImagesLoaded(true);
+    // Preload images for better performance
+    const imagePromises: Promise<void>[] = [];
+    
+    // Add hero image
+    const heroImagePromise = new Promise<void>((resolve) => {
+      const img = new Image();
+      img.onload = () => resolve();
+      img.src = heroPhoto;
+    });
+    imagePromises.push(heroImagePromise);
+    
+    // Add first few project images
+    projects.slice(0, 3).forEach(project => {
+      const promise = new Promise<void>((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve();
+        img.src = project.image;
+      });
+      imagePromises.push(promise);
+    });
+    
+    // When key images are loaded, set imagesLoaded to true
+    Promise.all(imagePromises).then(() => {
+      setImagesLoaded(true);
+    });
   }, []);
 
   const aboutRef = useRef<HTMLElement>(null);
@@ -251,7 +274,7 @@ const Index = () => {
             </h1>
             <div className="h-1 w-20 bg-black mb-6"></div>
             <h2 className="text-xl md:text-2xl mb-6 text-primary">
-              <AnimatedText text="Business student with passion for innovation, Digital Marketer, UI/UX Designer & Brand Strategist." speed={54} />
+              <AnimatedText text="Turning creative ideas into impact, digitally." speed={54} />
             </h2>
             <p className="text-gray-600 mb-8 max-w-md leading-relaxed">
               Welcome! I'm a business student and entrepreneur who genuinely enjoys making a difference with design, strategy, and marketing. If you love creative projects (and friendly vibes), let's connect and build something great together.
@@ -281,7 +304,7 @@ const Index = () => {
                   alt="Adnan Ahamed Farooqui"
                   className="w-full h-full object-cover rounded-full"
                   loading="eager"
-                  fetchpriority="high"
+                  fetchPriority="high"
                   decoding="async"
                   style={{objectPosition: "center top", backgroundColor: "#ffdee2"}}
                 />
@@ -302,10 +325,10 @@ const Index = () => {
           </h2>
           <div className="sticker-card bg-white p-8 max-w-3xl mx-auto">
             <p className="text-lg mb-6">
-              I’m passionate about blending creativity, business sense, and technology to solve real problems for real people. My superpowers? Leading data-driven marketing, building playful brands, and taking projects from “just an idea” to full launch—always with a user-first mindset.
+              I'm passionate about blending creativity, business sense, and technology to solve real problems for real people. My superpowers? Leading data-driven marketing, building playful brands, and taking projects from "just an idea" to full launch—always with a user-first mindset.
             </p>
             <p className="text-lg">
-              Right now I’m studying Entrepreneurship at IVB and Computer Applications at SRM, but the biggest lessons often come from collaborating with amazing people and tackling new challenges head-on.
+              Right now I'm studying Entrepreneurship at IVB and Computer Applications at SRM, but the biggest lessons often come from collaborating with amazing people and tackling new challenges head-on.
             </p>
           </div>
         </div>

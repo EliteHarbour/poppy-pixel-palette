@@ -370,12 +370,12 @@ const Index = () => {
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
             Dive into some of my favorite projects, each one a little experiment in impact, design, and reaching real people.
           </p>
-          <div className="flex justify-center mb-12 overflow-x-auto pb-4">
-            <div className="flex space-x-2">
+          <div className="flex justify-center mb-12 overflow-x-auto w-full pb-4 relative">
+            <div className="flex space-x-2 min-w-max px-4 mx-auto">
               {categories.map((category) => (
                 <button
                   key={category.id}
-                  className={`px-4 py-2 rounded-full font-medium transition-all ${
+                  className={`px-4 py-2 rounded-full font-medium transition-all whitespace-nowrap ${
                     activeTab === category.id
                       ? "bg-primary text-white"
                       : "bg-gray-100 hover:bg-gray-200"
@@ -385,6 +385,9 @@ const Index = () => {
                   {category.name}
                 </button>
               ))}
+            </div>
+            <div className="absolute -bottom-2 left-0 right-0 flex justify-center md:hidden">
+              <div className="w-16 h-1 bg-gray-300 rounded-full animate-pulse"></div>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

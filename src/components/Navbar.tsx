@@ -22,7 +22,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/90 backdrop-blur-sm shadow-sm py-3" : "bg-transparent py-5"}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/90 backdrop-blur-sm shadow-sm py-3" : "bg-transparent py-5"} ${isOpen ? "h-auto" : "h-16"}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#hero" className="text-2xl font-bold">
           Adnan<span className="text-primary">.</span>

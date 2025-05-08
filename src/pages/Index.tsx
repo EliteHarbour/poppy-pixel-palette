@@ -177,6 +177,14 @@ const experiences = [
   }
 ];
 
+const education = [
+  {
+    institution: "IIT (ISM) Dhanbad",
+    degree: "Bachelor of Technology in Computer Science and Engineering (2021–2024) (dropped out)",
+    description: "Pursued a comprehensive curriculum in computer science and engineering, focusing on software development, data structures, and algorithms."
+  }
+];
+
 const categories = [
   { id: "all", name: "All Projects" },
   { id: "design", name: "Design" },
@@ -262,10 +270,10 @@ const Index = () => {
             </h1>
             <div className="h-1 w-20 bg-black mb-6"></div>
             <h2 className="text-xl md:text-2xl mb-6 text-primary font-medium">
-              Business student with a passion for innovation, digital marketing, UI/UX, and creating brands that make a difference.
+              Business student with a passion for innovation, digital marketing, branding, and creating brands that make a difference.
             </h2>
             <p className="text-gray-700 mb-8 max-w-md leading-relaxed">
-              Thanks for dropping by! I'm always excited to take creative ideas and turn them into something real—whether that's a brand, website, or full marketing campaign. Let’s create something meaningful together.
+              Thanks for dropping by! I'm always excited to take creative ideas and turn them into something real whether that's a brand, website, or full marketing campaign. Let’s create something meaningful together.
             </p>
             <div className="flex space-x-4">
               <a 

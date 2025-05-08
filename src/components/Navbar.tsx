@@ -29,7 +29,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="md:flex items-center space-x-8">
           <a href="#about" className="animated-underline font-medium">About</a>
           <a href="#skills" className="animated-underline font-medium">Skills</a>
           <a href="#experience" className="animated-underline font-medium">Experience</a>

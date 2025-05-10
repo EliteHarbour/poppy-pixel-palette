@@ -378,12 +378,14 @@ const Index = () => {
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
             Dive into some of my favorite projects, each one a little experiment in impact, design, and reaching real people.
           </p>
-          <div className="relative flex justify-center mb-12 overflow-x-auto pb-6 max-w-full mx-auto scrollbar-hide">  
-            <div className="flex space-x-3 px-4 snap-x snap-mandatory scroll-px-4">
+          
+          {/* Fixed category selector for mobile view */}
+          <div className="relative mb-12">  
+            <div className="flex pb-6 overflow-x-auto scrollbar-hide px-2 md:justify-center">
               {categories.map((category) => (
                 <button
                   key={category.id}
-                  className={`px-4 py-2 rounded-full font-medium transition-all flex-shrink-0 snap-start ${
+                  className={`px-4 py-2 rounded-full font-medium transition-all whitespace-nowrap flex-shrink-0 mx-1 ${
                     activeTab === category.id
                       ? "bg-primary text-white"
                       : "bg-gray-100 hover:bg-gray-200"
@@ -394,24 +396,8 @@ const Index = () => {
                 </button>
               ))}
             </div>
-            <div className="absolute -bottom-1 left-0 right-0 flex justify-center md:hidden pointer-events-none">
-              <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                <div className="w-4 h-1 bg-gray-300 rounded-full"></div>
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse delay-150"></div>
-              </div>
-            </div>
-            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 md:hidden pointer-events-none">
-              <div className="w-8 h-8 bg-gradient-to-r from-white to-transparent flex items-center justify-start pl-1">
-                <ChevronRight className="w-4 h-4 text-gray-400 rotate-180 animate-pulse" />
-              </div>
-            </div>
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 md:hidden pointer-events-none">
-              <div className="w-8 h-8 bg-gradient-to-l from-white to-transparent flex items-center justify-end pr-1">
-                <ChevronRight className="w-4 h-4 text-gray-400 animate-pulse" />
-              </div>
-            </div>
           </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
               <ProjectCard

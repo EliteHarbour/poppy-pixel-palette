@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { Heart, Mail, Phone, MapPin, Linkedin, ExternalLink, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -317,7 +318,7 @@ const Index = () => {
           </h2>
           <div className="sticker-card bg-white p-8 max-w-3xl mx-auto">
             <p className="text-lg mb-6">
-              I'm passionate about blending creativity, business sense, and technology to solve real problems for real people. My superpowers? Leading data-driven marketing, building playful brands, and taking projects from "just an idea" to full launch—always with a user-first mindset.
+              I'm passionate about blending creativity, business sense, and technology to solve real problems for real people. My superpowers? Leading data-driven marketing, building playful brands, and taking projects from "just an idea" to full launch always with a user-first mindset.
             </p>
             <p className="text-lg">
               Right now I'm studying Entrepreneurship at IVB and Computer Applications at SRM, but the biggest lessons often come from collaborating with amazing people and tackling new challenges head-on.

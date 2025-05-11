@@ -1,6 +1,9 @@
-
 import { useState, useEffect, useRef } from "react";
-import { Heart, Mail, Phone, MapPin, Linkedin, ExternalLink, ChevronRight } from "lucide-react";
+import { 
+  Heart, Mail, Phone, MapPin, Linkedin, ExternalLink, ChevronRight,
+  Canva, Figma, Shopify, Wordpress, Excel, Trello, Jira, Zapier, 
+  N8n, Mixpanel, Chatgpt, Claude, Gemini, Midjourney
+} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
 import SkillTag from "@/components/SkillTag";
@@ -8,6 +11,7 @@ import ExperienceCard from "@/components/ExperienceCard";
 import FloatingShapes from "@/components/FloatingShapes";
 import AnimatedText from "@/components/AnimatedText";
 import ScrollToTop from "@/components/ScrollToTop";
+import ToolCard from "@/components/ToolCard";
 
 const heroPhoto = "/lovable-uploads/2ad85604-131e-48ce-9d08-2ee4455921fa.png";
 
@@ -195,6 +199,32 @@ const categories = [
   { id: "branding", name: "Branding" },
 ];
 
+const tools = [
+  { name: "Canva", icon: Canva },
+  { name: "Figma", icon: Figma },
+  { name: "Meta Ads Manager", icon: "meta-ads-manager" },
+  { name: "Google Analytics", icon: "google-analytics" },
+  { name: "Jira", icon: Jira },
+  { name: "Trello", icon: Trello },
+  { name: "Excel", icon: Excel },
+  { name: "VS Code", icon: "code" },
+  { name: "Shopify", icon: Shopify },
+  { name: "WordPress", icon: Wordpress },
+  { name: "Kit.com", icon: "kit" },
+  { name: "Aisensy", icon: "message-square" },
+  { name: "SEMrush", icon: "semrush" },
+  { name: "Google Ads", icon: "google-ads-manager" },
+  { name: "Bubble", icon: "bubble" },
+  { name: "Zapier", icon: Zapier },
+  { name: "n8n", icon: N8n },
+  { name: "Mixpanel", icon: Mixpanel },
+  { name: "ChatGPT", icon: Chatgpt },
+  { name: "Claude", icon: Claude },
+  { name: "Gemini", icon: Gemini },
+  { name: "Midjourney", icon: Midjourney },
+  { name: "ElevenLabs", icon: "headphones" }
+];
+
 const useOnScreen = (ref: React.RefObject<HTMLElement>) => {
   const [isIntersecting, setIntersecting] = useState(false);
   useEffect(() => {
@@ -263,6 +293,7 @@ const Index = () => {
       <ScrollToTop />
       <Navbar />
 
+      {/* Hero Section */}
       <section id="hero" className="pt-32 pb-20 px-4 md:px-0">
         <div className="container mx-auto flex flex-col md:flex-row items-center">
           <div className={`md:w-1/2 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
@@ -311,6 +342,7 @@ const Index = () => {
         </div>
       </section>
       
+      {/* About Section */}
       <section id="about" className="py-20 bg-pastel-blue px-4 md:px-0" ref={aboutRef}>
         <div className={`container mx-auto transition-all duration-1000 ${aboutVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -327,6 +359,7 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Skills Section */}
       <section id="skills" ref={skillsRef} className="py-20 px-4 md:px-0">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -351,6 +384,25 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Tools Section */}
+      <section id="tools" className="py-20 bg-pastel-yellow px-4 md:px-0">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+            Tools I <span className="text-primary">Know</span>
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+            {tools.map((tool, index) => (
+              <ToolCard 
+                key={index}
+                name={tool.name}
+                icon={tool.icon}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Experience Section */}
       <section id="experience" className="py-20 bg-pastel-pink px-4 md:px-0" ref={experienceRef}>
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -371,6 +423,7 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Projects Section */}
       <section id="projects" className="py-20 px-4 md:px-0" ref={projectsRef}>
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
@@ -415,6 +468,7 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Education Section */}
       <section id="education" className="py-20 bg-pastel-purple px-4 md:px-0" ref={educationRef}>
         <div className={`container mx-auto transition-all duration-1000 ${educationVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -452,6 +506,7 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Achievements Section */}
       <section id="achievements" className="py-20 px-4 md:px-0" ref={achievementsRef}>
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -533,6 +588,7 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Contact Section */}
       <section id="contact" className="py-20 bg-pastel-green px-4 md:px-0" ref={contactRef}>
         <div className={`container mx-auto transition-all duration-1000 ${contactVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -567,6 +623,7 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Footer */}
       <footer className="py-8 bg-gray-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-4">© {new Date().getFullYear()} Adnan Ahamed Farooqui. All rights reserved.</p>

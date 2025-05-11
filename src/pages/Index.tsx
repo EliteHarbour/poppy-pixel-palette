@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { 
   Heart, Mail, Phone, MapPin, Linkedin, ExternalLink, ChevronRight,
-  Canva, Figma, Shopify, Wordpress, Excel, Trello, Jira, Zapier, 
-  N8n, Mixpanel, Chatgpt, Claude, Gemini, Midjourney
+  MessageSquare, Code, Headphones
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
@@ -200,28 +199,28 @@ const categories = [
 ];
 
 const tools = [
-  { name: "Canva", icon: Canva },
-  { name: "Figma", icon: Figma },
+  { name: "Canva", icon: "canva" },
+  { name: "Figma", icon: "figma" },
   { name: "Meta Ads Manager", icon: "meta-ads-manager" },
   { name: "Google Analytics", icon: "google-analytics" },
-  { name: "Jira", icon: Jira },
-  { name: "Trello", icon: Trello },
-  { name: "Excel", icon: Excel },
+  { name: "Jira", icon: "jira" },
+  { name: "Trello", icon: "trello" },
+  { name: "Excel", icon: "excel" },
   { name: "VS Code", icon: "code" },
-  { name: "Shopify", icon: Shopify },
-  { name: "WordPress", icon: Wordpress },
+  { name: "Shopify", icon: "shopify" },
+  { name: "WordPress", icon: "wordpress" },
   { name: "Kit.com", icon: "kit" },
   { name: "Aisensy", icon: "message-square" },
   { name: "SEMrush", icon: "semrush" },
   { name: "Google Ads", icon: "google-ads-manager" },
   { name: "Bubble", icon: "bubble" },
-  { name: "Zapier", icon: Zapier },
-  { name: "n8n", icon: N8n },
-  { name: "Mixpanel", icon: Mixpanel },
-  { name: "ChatGPT", icon: Chatgpt },
-  { name: "Claude", icon: Claude },
-  { name: "Gemini", icon: Gemini },
-  { name: "Midjourney", icon: Midjourney },
+  { name: "Zapier", icon: "zapier" },
+  { name: "n8n", icon: "n8n" },
+  { name: "Mixpanel", icon: "mixpanel" },
+  { name: "ChatGPT", icon: "chatgpt" },
+  { name: "Claude", icon: "claude" },
+  { name: "Gemini", icon: "gemini" },
+  { name: "Midjourney", icon: "midjourney" },
   { name: "ElevenLabs", icon: "headphones" }
 ];
 

@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { 
   Heart, Mail, Phone, MapPin, Linkedin, ExternalLink, ChevronRight,
@@ -27,8 +26,8 @@ const projects = [
   },
   {
     id: 2,
-    title: "SpeakUp – Metro Commuter Marketing Project",
-    description: "A personality development and public speaking course tailored for metro commuters. We designed a ₹399, mobile-friendly course delivered via WhatsApp, targeting job seekers and students with learning anxiety. I led marketing strategy, persona research, and media planning—projected to reach 2.85L commuters with 650+ conversions and 28% ROI.",
+    title: "SpeakUp – Metro Marketing Project",
+    description: "Designed and marketed a ₹399 public speaking course for metro commuters. Led user persona research and ad strategy, achieving ~650 conversions with 28% ROI using WhatsApp-based delivery.",
     image: "/lovable-uploads/27ce9766-bc2e-4011-9d7c-eb7d4fec7c7e.png",
     link: "https://www.canva.com/design/DAGmUjZhbug/FnbP93bV4QezWtbkWVLyLA/edit?utm_content=DAGmUjZhbug&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "marketing",
@@ -36,8 +35,8 @@ const projects = [
   },
   {
     id: 3,
-    title: "Bias Analysis for Meta Platforms – Capstone Project",
-    description: "In this team-led capstone, we analyzed cognitive, algorithmic, and consumer biases within Meta platforms. I explored real-world failures (Juicero, Quibi, Kodak), and co-developed mitigation strategies including algorithm audits, ethical pricing, and recruitment redesigns—focusing on how tech giants can improve fairness, decision-making, and user trust.",
+    title: "Meta Bias Analysis – Capstone Project",
+    description: "Analyzed bias in Meta's platforms and proposed strategies like algorithm audits, ethical pricing, and inclusive design. Applied lessons from real-world business failures to tech ethics.",
     image: "/lovable-uploads/579db186-93b4-41d4-bb83-8d95b4376a58.png",
     link: "https://www.canva.com/design/DAGZ07IGvCg/Sl16a_4OiDhvQoV1NOWrpQ/edit?utm_content=DAGZ07IGvCg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "business",

@@ -27,7 +27,7 @@ const projects = [
   {
     id: 2,
     title: "SpeakUp – Metro Marketing Project",
-    description: "Designed and marketed a ₹399 public speaking course for metro commuters. Led user persona research and ad strategy, achieving ~650 conversions with 28% ROI using WhatsApp-based delivery.",
+    description: "Conducted on-ground commuter profiling in Chennai Metro to identify digital behaviors and needs. Designed a marketing campaign for a ₹399 public speaking course tailored to aspirational commuters, achieving ~650 conversions with 28% ROI using WhatsApp-based delivery.",
     image: "/lovable-uploads/27ce9766-bc2e-4011-9d7c-eb7d4fec7c7e.png",
     link: "https://www.canva.com/design/DAGmUjZhbug/FnbP93bV4QezWtbkWVLyLA/edit?utm_content=DAGmUjZhbug&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "marketing",

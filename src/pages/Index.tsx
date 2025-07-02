@@ -27,7 +27,7 @@ const projects = [
   {
     id: 2,
     title: "SpeakUp – Metro Marketing Project",
-    description: "Conducted on-ground commuter profiling in Chennai Metro to identify digital behaviors and needs. Designed a marketing campaign for a ₹399 public speaking course tailored to aspirational commuters, achieving ~650 conversions with 28% ROI using WhatsApp-based delivery.",
+    description: "Conducted on-ground commuter profiling in Chennai Metro to identify digital behaviors and needs. Designed a marketing campaign for a public speaking course tailored to aspirational commuters.",
     image: "/lovable-uploads/27ce9766-bc2e-4011-9d7c-eb7d4fec7c7e.png",
     link: "https://www.canva.com/design/DAGmUjZhbug/FnbP93bV4QezWtbkWVLyLA/edit?utm_content=DAGmUjZhbug&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "marketing",
@@ -64,7 +64,7 @@ const projects = [
     id: 6,
     title: "Chosen by Dermatology – Brand Audit",
     description: "Audited the brand and crafted a strategy focused on scalability through inclusive skincare, premium positioning, and targeted storytelling.",
-    image: "/lovable-uploads/40d2a0c3-6c2a-4241-ac7d-85a45f4ac4f4.png",
+    image: "/lovable-uploads/c79c26cb-3af7-413d-9f16-64e8abb884dc.png",
     link: "https://www.canva.com/design/DAGT7_z5u5E/-nYE0eAqtGaleJGUAgRKqA/edit?utm_content=DAGT7_z5u5E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "branding",
     color: "bg-pastel-peach"

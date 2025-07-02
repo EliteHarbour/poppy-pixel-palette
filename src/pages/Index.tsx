@@ -44,6 +44,42 @@ const projects = [
   },
   {
     id: 4,
+    title: "Automated Lead Management Workflow",
+    description: "Automated lead management workflow using Zapier by integrating Google Sheets, Gmail, and Trello. Triggered email notifications and Trello card creation whenever a new or updated row was added in Google Sheets, streamlining lead tracking and follow-ups.",
+    image: "/lovable-uploads/712952f6-815f-4eca-88c2-b2dd4ebe5e31.png",
+    link: "https://zapier.com/shared/af145bc570224cc4cc96cf7b7e64c89206e0fbcc",
+    category: "development",
+    color: "bg-pastel-yellow"
+  },
+  {
+    id: 5,
+    title: "Out of the Box – Brand Strategy",
+    description: "Conducted a brand audit and developed Wondernest, a playful sub-brand with a strong visual identity and pitch deck to drive engagement and licensing growth.",
+    image: "/lovable-uploads/eb9a5dcb-1f4a-4d8e-a245-84ea6c0da479.png",
+    link: "https://www.canva.com/design/DAGl00-KYbo/zmXUtBIGE0OXL08n-vSdAw/edit?utm_content=DAGl00-KYbo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+    category: "branding",
+    color: "bg-pastel-pink"
+  },
+  {
+    id: 6,
+    title: "Chosen by Dermatology – Brand Audit",
+    description: "Audited the brand and crafted a strategy focused on scalability through inclusive skincare, premium positioning, and targeted storytelling.",
+    image: "/lovable-uploads/40d2a0c3-6c2a-4241-ac7d-85a45f4ac4f4.png",
+    link: "https://www.canva.com/design/DAGT7_z5u5E/-nYE0eAqtGaleJGUAgRKqA/edit?utm_content=DAGT7_z5u5E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+    category: "branding",
+    color: "bg-pastel-peach"
+  },
+  {
+    id: 7,
+    title: "Startup Story – Skillo DIY",
+    description: "Documented the journey of Akshay Pareekh, founder of Skillo DIY. Conducted interviews and research to analyze the startup's growth, pivot, and business model.",
+    image: "/lovable-uploads/5d778df2-b125-4576-9754-7d95c59535b0.png",
+    link: "https://docs.google.com/document/d/1hqqSJN0cBdk5tYs5fBhAGff1AxKiNNyGapng5WkBid8/edit?usp=sharing",
+    category: "business",
+    color: "bg-pastel-blue"
+  },
+  {
+    id: 8,
     title: "Eliteharbur (Shopify E-commerce Website)",
     description: "I built and launched a cheerful, easy-to-use Shopify website for Eliteharbur, helping their brand deliver a simple and delightful shopping experience.",
     image: "/lovable-uploads/2a39adcf-4595-4697-83e3-31bdeba09dc9.png",
@@ -52,7 +88,7 @@ const projects = [
     color: "bg-pastel-pink"
   },
   {
-    id: 5,
+    id: 9,
     title: "Capstone Project – Elder Care Startup",
     description: "I created a business plan for an elder care startup—combining design thinking, user feedback, and financial planning to move from idea to real impact.",
     image: "/lovable-uploads/66cd5996-1505-4ab1-a76a-957635cc0dfa.png",
@@ -61,7 +97,7 @@ const projects = [
     color: "bg-pastel-purple"
   },
   {
-    id: 6,
+    id: 10,
     title: "Brand Genesis – BotanIQ",
     description: "For BotanIQ, I developed a fresh, organic brand identity and designed their Shopify website—helping them share their wellness mission in every pixel.",
     image: "/lovable-uploads/b6d48e18-014c-440d-a2f6-f2034b689cf7.png",
@@ -70,7 +106,7 @@ const projects = [
     color: "bg-pastel-green"
   },
   {
-    id: 7,
+    id: 11,
     title: "Business Analysis & Process Management (Coursera)",
     description: "On Coursera, I learned to map processes, optimize workflows, and make sharper decisions—all rooted in real data.",
     image: "/lovable-uploads/54a5335b-0e37-4755-bad8-7b3190c26528.png",
@@ -79,7 +115,7 @@ const projects = [
     color: "bg-pastel-yellow"
   },
   {
-    id: 8,
+    id: 12,
     title: "Responsive Web Interface (Multi-Specialty Hospital)",
     description: "I designed a modern, user-centric landing page for a multi-specialty hospital to make information easy and accessible.",
     image: "/lovable-uploads/2717389b-a8fc-4483-aab7-2dd20f17e15a.png",
@@ -88,7 +124,7 @@ const projects = [
     color: "bg-pastel-peach"
   },
   {
-    id: 9,
+    id: 13,
     title: "Plug It (EV Charging Startup)",
     description: "My team and I won the SDG Hackathon with Plug It, a sustainable solution for EV charging that's all about greener cities.",
     image: "/lovable-uploads/867f07c3-2caa-41ee-aef0-7cd319b5ab4d.png",
@@ -97,7 +133,7 @@ const projects = [
     color: "bg-pastel-blue"
   },
   {
-    id: 10,
+    id: 14,
     title: "Interplanetary Travel App Prototype (Figma)",
     description: "Just for fun: I created a Figma prototype for a cosmic travel app like Uber—imagining what space journeys could look like if booking was easy and playful.",
     image: "/lovable-uploads/dfc28735-190a-425b-8e34-bde4ee4fbf97.png",
@@ -106,7 +142,7 @@ const projects = [
     color: "bg-pastel-green"
   },
   {
-    id: 11,
+    id: 15,
     title: "Vivah Brand Analysis",
     description: "I audited Vivah's social presence and delivered creative strategies to help their engagement skyrocket.",
     image: "/lovable-uploads/315fb446-1f42-48c3-8761-ad3b92690fec.png",
@@ -115,7 +151,7 @@ const projects = [
     color: "bg-pastel-pink"
   },
   {
-    id: 12,
+    id: 16,
     title: "Email Marketing Lead Magnet Page (Kit.com)",
     description: "From idea to launch: I designed a high-converting email lead magnet page on Kit.com, complete with automation sequences for growth.",
     image: "/lovable-uploads/1af44227-f669-4179-b3c3-2645c31e9972.png",
@@ -124,7 +160,7 @@ const projects = [
     color: "bg-pastel-purple"
   },
   {
-    id: 13,
+    id: 17,
     title: "Google Ads Campaign for Dinora (B2B Jeans Brand)",
     description: "I drove real business results with targeted Google Ads for Dinora—optimizing creative, keywords, bidding, and reporting to maximize quality B2B leads.",
     image: "/lovable-uploads/11391f00-db89-4744-a2a5-0b4de5744119.png",
@@ -235,6 +271,7 @@ const tools = [
   { name: "Zapier", icon: "zapier" },
   { name: "n8n", icon: "n8n" },
   { name: "Mixpanel", icon: "mixpanel" },
+  { name: "Airtable", icon: "airtable" },
   { name: "ChatGPT", icon: "chatgpt" },
   { name: "Claude", icon: "claude" },
   { name: "Gemini", icon: "gemini" },
@@ -322,7 +359,7 @@ const Index = () => {
               Business student with a passion for innovation, digital marketing, branding, and creating brands that make a difference.
             </h2>
             <p className="text-gray-700 mb-8 max-w-md leading-relaxed">
-              Thanks for dropping by! I'm always excited to take creative ideas and turn them into something real whether that's a brand, website, or full marketing campaign. Let’s create something meaningful together.
+              Thanks for dropping by! I'm always excited to take creative ideas and turn them into something real whether that's a brand, website, or full marketing campaign. Let's create something meaningful together.
             </p>
             <div className="flex space-x-4">
               <a 

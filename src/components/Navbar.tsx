@@ -1,10 +1,12 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,14 +24,14 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/90 backdrop-blur-sm shadow-sm py-3" : "bg-transparent py-5"} ${isOpen ? "h-auto" : "h-16"}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/90 backdrop-blur-sm shadow-sm py-3" : "bg-transparent py-5"} ${isOpen ? "h-auto" : ""}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#hero" className="text-2xl font-bold">
           Adnan<span className="text-primary">.</span>
         </a>
 
         {/* Desktop Menu */}
-        <div className="md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-8">
           <a href="#about" className="animated-underline font-medium">About</a>
           <a href="#skills" className="animated-underline font-medium">Skills</a>
           <a href="#experience" className="animated-underline font-medium">Experience</a>

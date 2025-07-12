@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { Heart, Mail, Phone, MapPin, Linkedin, ExternalLink, ChevronRight } from "lucide-react";
+import { 
+  Heart, Mail, Phone, MapPin, Linkedin, ExternalLink, ChevronRight,
+  MessageSquare, Code, Headphones
+} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
 import SkillTag from "@/components/SkillTag";
@@ -7,6 +10,7 @@ import ExperienceCard from "@/components/ExperienceCard";
 import FloatingShapes from "@/components/FloatingShapes";
 import AnimatedText from "@/components/AnimatedText";
 import ScrollToTop from "@/components/ScrollToTop";
+import ToolCard from "@/components/ToolCard";
 
 const heroPhoto = "/lovable-uploads/2ad85604-131e-48ce-9d08-2ee4455921fa.png";
 
@@ -22,15 +26,80 @@ const projects = [
   },
   {
     id: 2,
+<<<<<<< HEAD
     title: "EchoComfort (AI Mental Health Support)",
     description: "I built an AI-powered anonymous counseling platform that provides instant emotional support, self-assessments, and personalized mental health resources—designed with a strong focus on user privacy and no sign-ups required.",
     image: "/lovable-uploads/echocomfort-screenshot.svg",
     link: "https://echo-comfort-chat.vercel.app/",
     category: "development",
+=======
+    title: "SpeakUp – Metro Marketing Project",
+    description: "Conducted on-ground commuter profiling in Chennai Metro to identify digital behaviors and needs. Designed a marketing campaign for a public speaking course tailored to aspirational commuters.",
+    image: "/lovable-uploads/27ce9766-bc2e-4011-9d7c-eb7d4fec7c7e.png",
+    link: "https://www.canva.com/design/DAGmUjZhbug/FnbP93bV4QezWtbkWVLyLA/edit?utm_content=DAGmUjZhbug&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+    category: "marketing",
+>>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
     color: "bg-pastel-green"
   },
   {
     id: 3,
+<<<<<<< HEAD
+=======
+    title: "Meta Bias Analysis – Capstone Project",
+    description: "Analyzed bias in Meta's platforms and proposed strategies like algorithm audits, ethical pricing, and inclusive design. Applied lessons from real-world business failures to tech ethics.",
+    image: "/lovable-uploads/579db186-93b4-41d4-bb83-8d95b4376a58.png",
+    link: "https://www.canva.com/design/DAGZ07IGvCg/Sl16a_4OiDhvQoV1NOWrpQ/edit?utm_content=DAGZ07IGvCg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+    category: "business",
+    color: "bg-pastel-purple"
+  },
+  {
+    id: 4,
+    title: "Automated Lead Management Workflow",
+    description: "Built a Zapier workflow integrating Google Sheets, Gmail, and Trello to auto-trigger emails and Trello cards for new or updated leads.",
+    image: "/lovable-uploads/712952f6-815f-4eca-88c2-b2dd4ebe5e31.png",
+    link: "https://zapier.com/shared/af145bc570224cc4cc96cf7b7e64c89206e0fbcc",
+    category: "development",
+    color: "bg-pastel-yellow"
+  },
+  {
+    id: 5,
+    title: "Airtable Project Management Dashboard",
+    description: "Built a linked Airtable base with Clients, Projects, and Tasks tables. Set up automations to trigger emails and status updates. Designed an interactive dashboard using Airtable Interfaces to visualize project progress and high-priority tasks.",
+    image: "/lovable-uploads/fb55951b-4066-45f9-b99d-2389f8cd0daf.png",
+    link: "https://www.loom.com/share/49c25e99633843069465f38c9a4a5565?sid=64238a3f-a8b6-4840-a4c0-97f8d917d35c",
+    category: "development",
+    color: "bg-pastel-blue"
+  },
+  {
+    id: 6,
+    title: "Out of the Box – Brand Strategy",
+    description: "Conducted a brand audit and developed Wondernest, a playful sub-brand with a strong visual identity and pitch deck to drive engagement and licensing growth.",
+    image: "/lovable-uploads/eb9a5dcb-1f4a-4d8e-a245-84ea6c0da479.png",
+    link: "https://www.canva.com/design/DAGl00-KYbo/zmXUtBIGE0OXL08n-vSdAw/edit?utm_content=DAGl00-KYbo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+    category: "branding",
+    color: "bg-pastel-pink"
+  },
+  {
+    id: 7,
+    title: "Chosen by Dermatology – Brand Audit",
+    description: "Audited the brand and crafted a strategy focused on scalability through inclusive skincare, premium positioning, and targeted storytelling.",
+    image: "/lovable-uploads/c79c26cb-3af7-413d-9f16-64e8abb884dc.png",
+    link: "https://www.canva.com/design/DAGT7_z5u5E/-nYE0eAqtGaleJGUAgRKqA/edit?utm_content=DAGT7_z5u5E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+    category: "branding",
+    color: "bg-pastel-peach"
+  },
+  {
+    id: 8,
+    title: "Startup Story – Skillo DIY",
+    description: "Documented the journey of Akshay Pareekh, founder of Skillo DIY. Conducted interviews and research to analyze the startup's growth, pivot, and business model.",
+    image: "/lovable-uploads/5d778df2-b125-4576-9754-7d95c59535b0.png",
+    link: "https://docs.google.com/document/d/1hqqSJN0cBdk5tYs5fBhAGff1AxKiNNyGapng5WkBid8/edit?usp=sharing",
+    category: "business",
+    color: "bg-pastel-blue"
+  },
+  {
+    id: 9,
+>>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
     title: "Eliteharbur (Shopify E-commerce Website)",
     description: "I built and launched a cheerful, easy-to-use Shopify website for Eliteharbur, helping their brand deliver a simple and delightful shopping experience.",
     image: "/lovable-uploads/2a39adcf-4595-4697-83e3-31bdeba09dc9.png",
@@ -39,7 +108,11 @@ const projects = [
     color: "bg-pastel-pink"
   },
   {
+<<<<<<< HEAD
     id: 4,
+=======
+    id: 10,
+>>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
     title: "Capstone Project – Elder Care Startup",
     description: "I created a business plan for an elder care startup—combining design thinking, user feedback, and financial planning to move from idea to real impact.",
     image: "/lovable-uploads/66cd5996-1505-4ab1-a76a-957635cc0dfa.png",
@@ -48,7 +121,11 @@ const projects = [
     color: "bg-pastel-purple"
   },
   {
+<<<<<<< HEAD
     id: 5,
+=======
+    id: 11,
+>>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
     title: "Brand Genesis – BotanIQ",
     description: "For BotanIQ, I developed a fresh, organic brand identity and designed their Shopify website—helping them share their wellness mission in every pixel.",
     image: "/lovable-uploads/b6d48e18-014c-440d-a2f6-f2034b689cf7.png",
@@ -57,7 +134,11 @@ const projects = [
     color: "bg-pastel-green"
   },
   {
+<<<<<<< HEAD
     id: 6,
+=======
+    id: 12,
+>>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
     title: "Business Analysis & Process Management (Coursera)",
     description: "On Coursera, I learned to map processes, optimize workflows, and make sharper decisions—all rooted in real data.",
     image: "/lovable-uploads/54a5335b-0e37-4755-bad8-7b3190c26528.png",
@@ -66,7 +147,11 @@ const projects = [
     color: "bg-pastel-yellow"
   },
   {
+<<<<<<< HEAD
     id: 7,
+=======
+    id: 13,
+>>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
     title: "Responsive Web Interface (Multi-Specialty Hospital)",
     description: "I designed a modern, user-centric landing page for a multi-specialty hospital to make information easy and accessible.",
     image: "/lovable-uploads/2717389b-a8fc-4483-aab7-2dd20f17e15a.png",
@@ -75,7 +160,11 @@ const projects = [
     color: "bg-pastel-peach"
   },
   {
+<<<<<<< HEAD
     id: 8,
+=======
+    id: 14,
+>>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
     title: "Plug It (EV Charging Startup)",
     description: "My team and I won the SDG Hackathon with Plug It, a sustainable solution for EV charging that's all about greener cities.",
     image: "/lovable-uploads/867f07c3-2caa-41ee-aef0-7cd319b5ab4d.png",
@@ -84,7 +173,11 @@ const projects = [
     color: "bg-pastel-blue"
   },
   {
+<<<<<<< HEAD
     id: 9,
+=======
+    id: 15,
+>>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
     title: "Interplanetary Travel App Prototype (Figma)",
     description: "Just for fun: I created a Figma prototype for a cosmic travel app like Uber—imagining what space journeys could look like if booking was easy and playful.",
     image: "/lovable-uploads/dfc28735-190a-425b-8e34-bde4ee4fbf97.png",
@@ -93,7 +186,11 @@ const projects = [
     color: "bg-pastel-green"
   },
   {
+<<<<<<< HEAD
     id: 10,
+=======
+    id: 16,
+>>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
     title: "Vivah Brand Analysis",
     description: "I audited Vivah's social presence and delivered creative strategies to help their engagement skyrocket.",
     image: "/lovable-uploads/315fb446-1f42-48c3-8761-ad3b92690fec.png",
@@ -102,7 +199,11 @@ const projects = [
     color: "bg-pastel-pink"
   },
   {
+<<<<<<< HEAD
     id: 11,
+=======
+    id: 17,
+>>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
     title: "Email Marketing Lead Magnet Page (Kit.com)",
     description: "From idea to launch: I designed a high-converting email lead magnet page on Kit.com, complete with automation sequences for growth.",
     image: "/lovable-uploads/1af44227-f669-4179-b3c3-2645c31e9972.png",
@@ -111,7 +212,11 @@ const projects = [
     color: "bg-pastel-purple"
   },
   {
+<<<<<<< HEAD
     id: 12,
+=======
+    id: 18,
+>>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
     title: "Google Ads Campaign for Dinora (B2B Jeans Brand)",
     description: "I drove real business results with targeted Google Ads for Dinora—optimizing creative, keywords, bidding, and reporting to maximize quality B2B leads.",
     image: "/lovable-uploads/11391f00-db89-4744-a2a5-0b4de5744119.png",
@@ -203,6 +308,33 @@ const categories = [
   { id: "branding", name: "Branding" },
 ];
 
+const tools = [
+  { name: "Canva", icon: "canva" },
+  { name: "Figma", icon: "figma" },
+  { name: "Meta Ads Manager", icon: "meta-ads-manager" },
+  { name: "Google Analytics", icon: "google-analytics" },
+  { name: "Jira", icon: "jira" },
+  { name: "Trello", icon: "trello" },
+  { name: "Excel", icon: "excel" },
+  { name: "VS Code", icon: "code" },
+  { name: "Shopify", icon: "shopify" },
+  { name: "WordPress", icon: "wordpress" },
+  { name: "Kit.com", icon: "kit" },
+  { name: "Aisensy", icon: "message-square" },
+  { name: "SEMrush", icon: "semrush" },
+  { name: "Google Ads", icon: "google-ads-manager" },
+  { name: "Bubble", icon: "bubble" },
+  { name: "Zapier", icon: "zapier" },
+  { name: "n8n", icon: "n8n" },
+  { name: "Mixpanel", icon: "mixpanel" },
+  { name: "Airtable", icon: "airtable" },
+  { name: "ChatGPT", icon: "chatgpt" },
+  { name: "Claude", icon: "claude" },
+  { name: "Gemini", icon: "gemini" },
+  { name: "Midjourney", icon: "midjourney" },
+  { name: "ElevenLabs", icon: "headphones" }
+];
+
 const useOnScreen = (ref: React.RefObject<HTMLElement>) => {
   const [isIntersecting, setIntersecting] = useState(false);
   useEffect(() => {
@@ -271,6 +403,7 @@ const Index = () => {
       <ScrollToTop />
       <Navbar />
 
+      {/* Hero Section */}
       <section id="hero" className="pt-32 pb-20 px-4 md:px-0">
         <div className="container mx-auto flex flex-col md:flex-row items-center">
           <div className={`md:w-1/2 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
@@ -282,7 +415,7 @@ const Index = () => {
               Business student with a passion for innovation, digital marketing, branding, and creating brands that make a difference.
             </h2>
             <p className="text-gray-700 mb-8 max-w-md leading-relaxed">
-              Thanks for dropping by! I'm always excited to take creative ideas and turn them into something real whether that's a brand, website, or full marketing campaign. Let’s create something meaningful together.
+              Thanks for dropping by! I'm always excited to take creative ideas and turn them into something real whether that's a brand, website, or full marketing campaign. Let's create something meaningful together.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -319,6 +452,7 @@ const Index = () => {
         </div>
       </section>
       
+      {/* About Section */}
       <section id="about" className="py-20 bg-pastel-blue px-4 md:px-0" ref={aboutRef}>
         <div className={`container mx-auto transition-all duration-1000 ${aboutVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -326,7 +460,7 @@ const Index = () => {
           </h2>
           <div className="sticker-card bg-white p-8 max-w-3xl mx-auto">
             <p className="text-lg mb-6">
-              I'm passionate about blending creativity, business sense, and technology to solve real problems for real people. My superpowers? Leading data-driven marketing, building playful brands, and taking projects from "just an idea" to full launch—always with a user-first mindset.
+              I'm passionate about blending creativity, business sense, and technology to solve real problems for real people. My superpowers? Leading data-driven marketing, building playful brands, and taking projects from "just an idea" to full launch always with a user-first mindset.
             </p>
             <p className="text-lg">
               Right now I'm studying Entrepreneurship at IVB and Computer Applications at SRM, but the biggest lessons often come from collaborating with amazing people and tackling new challenges head-on.
@@ -335,6 +469,7 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Skills Section */}
       <section id="skills" ref={skillsRef} className="py-20 px-4 md:px-0">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -359,6 +494,25 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Tools Section */}
+      <section id="tools" className="py-20 bg-pastel-yellow px-4 md:px-0">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+            Tools I <span className="text-primary">Know</span>
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+            {tools.map((tool, index) => (
+              <ToolCard 
+                key={index}
+                name={tool.name}
+                icon={tool.icon}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Experience Section */}
       <section id="experience" className="py-20 bg-pastel-pink px-4 md:px-0" ref={experienceRef}>
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -379,6 +533,7 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Projects Section */}
       <section id="projects" className="py-20 px-4 md:px-0" ref={projectsRef}>
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
@@ -387,12 +542,14 @@ const Index = () => {
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
             Dive into some of my favorite projects, each one a little experiment in impact, design, and reaching real people.
           </p>
-          <div className="relative flex justify-center mb-12 overflow-x-auto pb-6 max-w-full mx-auto scrollbar-hide">  
-            <div className="flex space-x-3 px-4 snap-x snap-mandatory scroll-px-4">
+          
+          {/* Fixed category selector for mobile view */}
+          <div className="relative mb-12">  
+            <div className="flex pb-6 overflow-x-auto scrollbar-hide px-2 md:justify-center">
               {categories.map((category) => (
                 <button
                   key={category.id}
-                  className={`px-4 py-2 rounded-full font-medium transition-all flex-shrink-0 snap-start ${
+                  className={`px-4 py-2 rounded-full font-medium transition-all whitespace-nowrap flex-shrink-0 mx-1 ${
                     activeTab === category.id
                       ? "bg-primary text-white"
                       : "bg-gray-100 hover:bg-gray-200"
@@ -403,24 +560,8 @@ const Index = () => {
                 </button>
               ))}
             </div>
-            <div className="absolute -bottom-1 left-0 right-0 flex justify-center md:hidden pointer-events-none">
-              <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                <div className="w-4 h-1 bg-gray-300 rounded-full"></div>
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse delay-150"></div>
-              </div>
-            </div>
-            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 md:hidden pointer-events-none">
-              <div className="w-8 h-8 bg-gradient-to-r from-white to-transparent flex items-center justify-start pl-1">
-                <ChevronRight className="w-4 h-4 text-gray-400 rotate-180 animate-pulse" />
-              </div>
-            </div>
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 md:hidden pointer-events-none">
-              <div className="w-8 h-8 bg-gradient-to-l from-white to-transparent flex items-center justify-end pr-1">
-                <ChevronRight className="w-4 h-4 text-gray-400 animate-pulse" />
-              </div>
-            </div>
           </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
               <ProjectCard
@@ -437,6 +578,7 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Education Section */}
       <section id="education" className="py-20 bg-pastel-purple px-4 md:px-0" ref={educationRef}>
         <div className={`container mx-auto transition-all duration-1000 ${educationVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -474,6 +616,7 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Achievements Section */}
       <section id="achievements" className="py-20 px-4 md:px-0" ref={achievementsRef}>
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -555,6 +698,7 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Contact Section */}
       <section id="contact" className="py-20 bg-pastel-green px-4 md:px-0" ref={contactRef}>
         <div className={`container mx-auto transition-all duration-1000 ${contactVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -589,6 +733,7 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Footer */}
       <footer className="py-8 bg-gray-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-4">© {new Date().getFullYear()} Adnan Ahamed Farooqui. All rights reserved.</p>

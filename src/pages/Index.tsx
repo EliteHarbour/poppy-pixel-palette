@@ -18,7 +18,7 @@ const projects = [
   {
     id: 1,
     title: "Clipsy (Assistive Tech Platform)",
-    description: "Clipsy is an AI-powered accessibility platform I helped design and build, making tech more friendly for people with disabilities and seniors. We listened to users at every step to create something that truly helps.",
+    description: "Clipsy is an accessibility platform I helped design and build, making tech more friendly for people with disabilities and seniors. We listened to users at every step to create something that truly helps.",
     image: "/lovable-uploads/7563ced7-1326-47c6-86ed-2882a3913fa1.png",
     link: "https://clipsy-ai.netlify.app/",
     category: "design",
@@ -26,25 +26,24 @@ const projects = [
   },
   {
     id: 2,
-<<<<<<< HEAD
-    title: "EchoComfort (AI Mental Health Support)",
-    description: "I built an AI-powered anonymous counseling platform that provides instant emotional support, self-assessments, and personalized mental health resources—designed with a strong focus on user privacy and no sign-ups required.",
-    image: "/lovable-uploads/echocomfort-screenshot.svg",
+    title: "EchoComfort – AI Mental Health Support",
+    description: "I built an AI-powered anonymous counseling platform that provides instant emotional support, self-assessments, and personalized mental health resources designed with a strong focus on user privacy and no sign-ups required.",
+    image: "/lovable-uploads/echocomfort-mental-health.svg",
     link: "https://echo-comfort-chat.vercel.app/",
     category: "development",
-=======
+    color: "bg-pastel-green"
+  },
+  {
+    id: 3,
     title: "SpeakUp – Metro Marketing Project",
     description: "Conducted on-ground commuter profiling in Chennai Metro to identify digital behaviors and needs. Designed a marketing campaign for a public speaking course tailored to aspirational commuters.",
     image: "/lovable-uploads/27ce9766-bc2e-4011-9d7c-eb7d4fec7c7e.png",
     link: "https://www.canva.com/design/DAGmUjZhbug/FnbP93bV4QezWtbkWVLyLA/edit?utm_content=DAGmUjZhbug&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
     category: "marketing",
->>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
     color: "bg-pastel-green"
   },
   {
-    id: 3,
-<<<<<<< HEAD
-=======
+    id: 4,
     title: "Meta Bias Analysis – Capstone Project",
     description: "Analyzed bias in Meta's platforms and proposed strategies like algorithm audits, ethical pricing, and inclusive design. Applied lessons from real-world business failures to tech ethics.",
     image: "/lovable-uploads/579db186-93b4-41d4-bb83-8d95b4376a58.png",
@@ -53,7 +52,7 @@ const projects = [
     color: "bg-pastel-purple"
   },
   {
-    id: 4,
+    id: 5,
     title: "Automated Lead Management Workflow",
     description: "Built a Zapier workflow integrating Google Sheets, Gmail, and Trello to auto-trigger emails and Trello cards for new or updated leads.",
     image: "/lovable-uploads/712952f6-815f-4eca-88c2-b2dd4ebe5e31.png",
@@ -62,7 +61,7 @@ const projects = [
     color: "bg-pastel-yellow"
   },
   {
-    id: 5,
+    id: 6,
     title: "Airtable Project Management Dashboard",
     description: "Built a linked Airtable base with Clients, Projects, and Tasks tables. Set up automations to trigger emails and status updates. Designed an interactive dashboard using Airtable Interfaces to visualize project progress and high-priority tasks.",
     image: "/lovable-uploads/fb55951b-4066-45f9-b99d-2389f8cd0daf.png",
@@ -71,7 +70,7 @@ const projects = [
     color: "bg-pastel-blue"
   },
   {
-    id: 6,
+    id: 7,
     title: "Out of the Box – Brand Strategy",
     description: "Conducted a brand audit and developed Wondernest, a playful sub-brand with a strong visual identity and pitch deck to drive engagement and licensing growth.",
     image: "/lovable-uploads/eb9a5dcb-1f4a-4d8e-a245-84ea6c0da479.png",
@@ -80,7 +79,7 @@ const projects = [
     color: "bg-pastel-pink"
   },
   {
-    id: 7,
+    id: 8,
     title: "Chosen by Dermatology – Brand Audit",
     description: "Audited the brand and crafted a strategy focused on scalability through inclusive skincare, premium positioning, and targeted storytelling.",
     image: "/lovable-uploads/c79c26cb-3af7-413d-9f16-64e8abb884dc.png",
@@ -89,7 +88,7 @@ const projects = [
     color: "bg-pastel-peach"
   },
   {
-    id: 8,
+    id: 9,
     title: "Startup Story – Skillo DIY",
     description: "Documented the journey of Akshay Pareekh, founder of Skillo DIY. Conducted interviews and research to analyze the startup's growth, pivot, and business model.",
     image: "/lovable-uploads/5d778df2-b125-4576-9754-7d95c59535b0.png",
@@ -98,8 +97,7 @@ const projects = [
     color: "bg-pastel-blue"
   },
   {
-    id: 9,
->>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
+    id: 10,
     title: "Eliteharbur (Shopify E-commerce Website)",
     description: "I built and launched a cheerful, easy-to-use Shopify website for Eliteharbur, helping their brand deliver a simple and delightful shopping experience.",
     image: "/lovable-uploads/2a39adcf-4595-4697-83e3-31bdeba09dc9.png",
@@ -108,11 +106,7 @@ const projects = [
     color: "bg-pastel-pink"
   },
   {
-<<<<<<< HEAD
-    id: 4,
-=======
-    id: 10,
->>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
+    id: 11,
     title: "Capstone Project – Elder Care Startup",
     description: "I created a business plan for an elder care startup—combining design thinking, user feedback, and financial planning to move from idea to real impact.",
     image: "/lovable-uploads/66cd5996-1505-4ab1-a76a-957635cc0dfa.png",
@@ -121,11 +115,7 @@ const projects = [
     color: "bg-pastel-purple"
   },
   {
-<<<<<<< HEAD
-    id: 5,
-=======
-    id: 11,
->>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
+    id: 12,
     title: "Brand Genesis – BotanIQ",
     description: "For BotanIQ, I developed a fresh, organic brand identity and designed their Shopify website—helping them share their wellness mission in every pixel.",
     image: "/lovable-uploads/b6d48e18-014c-440d-a2f6-f2034b689cf7.png",
@@ -134,11 +124,7 @@ const projects = [
     color: "bg-pastel-green"
   },
   {
-<<<<<<< HEAD
-    id: 6,
-=======
-    id: 12,
->>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
+    id: 13,
     title: "Business Analysis & Process Management (Coursera)",
     description: "On Coursera, I learned to map processes, optimize workflows, and make sharper decisions—all rooted in real data.",
     image: "/lovable-uploads/54a5335b-0e37-4755-bad8-7b3190c26528.png",
@@ -147,11 +133,7 @@ const projects = [
     color: "bg-pastel-yellow"
   },
   {
-<<<<<<< HEAD
-    id: 7,
-=======
-    id: 13,
->>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
+    id: 14,
     title: "Responsive Web Interface (Multi-Specialty Hospital)",
     description: "I designed a modern, user-centric landing page for a multi-specialty hospital to make information easy and accessible.",
     image: "/lovable-uploads/2717389b-a8fc-4483-aab7-2dd20f17e15a.png",
@@ -160,11 +142,7 @@ const projects = [
     color: "bg-pastel-peach"
   },
   {
-<<<<<<< HEAD
-    id: 8,
-=======
-    id: 14,
->>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
+    id: 15,
     title: "Plug It (EV Charging Startup)",
     description: "My team and I won the SDG Hackathon with Plug It, a sustainable solution for EV charging that's all about greener cities.",
     image: "/lovable-uploads/867f07c3-2caa-41ee-aef0-7cd319b5ab4d.png",
@@ -173,11 +151,7 @@ const projects = [
     color: "bg-pastel-blue"
   },
   {
-<<<<<<< HEAD
-    id: 9,
-=======
-    id: 15,
->>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
+    id: 16,
     title: "Interplanetary Travel App Prototype (Figma)",
     description: "Just for fun: I created a Figma prototype for a cosmic travel app like Uber—imagining what space journeys could look like if booking was easy and playful.",
     image: "/lovable-uploads/dfc28735-190a-425b-8e34-bde4ee4fbf97.png",
@@ -186,11 +160,7 @@ const projects = [
     color: "bg-pastel-green"
   },
   {
-<<<<<<< HEAD
-    id: 10,
-=======
-    id: 16,
->>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
+    id: 17,
     title: "Vivah Brand Analysis",
     description: "I audited Vivah's social presence and delivered creative strategies to help their engagement skyrocket.",
     image: "/lovable-uploads/315fb446-1f42-48c3-8761-ad3b92690fec.png",
@@ -199,11 +169,7 @@ const projects = [
     color: "bg-pastel-pink"
   },
   {
-<<<<<<< HEAD
-    id: 11,
-=======
-    id: 17,
->>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
+    id: 18,
     title: "Email Marketing Lead Magnet Page (Kit.com)",
     description: "From idea to launch: I designed a high-converting email lead magnet page on Kit.com, complete with automation sequences for growth.",
     image: "/lovable-uploads/1af44227-f669-4179-b3c3-2645c31e9972.png",
@@ -212,11 +178,7 @@ const projects = [
     color: "bg-pastel-purple"
   },
   {
-<<<<<<< HEAD
-    id: 12,
-=======
-    id: 18,
->>>>>>> 4b5bf8e8635a75017dfcb5301271c4a8f8e1fc39
+    id: 19,
     title: "Google Ads Campaign for Dinora (B2B Jeans Brand)",
     description: "I drove real business results with targeted Google Ads for Dinora—optimizing creative, keywords, bidding, and reporting to maximize quality B2B leads.",
     image: "/lovable-uploads/11391f00-db89-4744-a2a5-0b4de5744119.png",

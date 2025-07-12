@@ -44,7 +44,7 @@ const projects = [
   },
   {
     id: 4,
-    title: "Automated Lead Management",
+    title: "Automated Lead Management Workflow",
     description: "Built a Zapier workflow integrating Google Sheets, Gmail, and Trello to auto-trigger emails and Trello cards for new or updated leads.",
     image: "/lovable-uploads/712952f6-815f-4eca-88c2-b2dd4ebe5e31.png",
     link: "https://zapier.com/shared/af145bc570224cc4cc96cf7b7e64c89206e0fbcc",

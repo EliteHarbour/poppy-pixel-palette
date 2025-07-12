@@ -22,6 +22,15 @@ const projects = [
   },
   {
     id: 2,
+    title: "EchoComfort (AI Mental Health Support)",
+    description: "I built an AI-powered anonymous counseling platform that provides instant emotional support, self-assessments, and personalized mental health resources—designed with a strong focus on user privacy and no sign-ups required.",
+    image: "/lovable-uploads/echocomfort-screenshot.svg",
+    link: "https://echo-comfort-chat.vercel.app/",
+    category: "development",
+    color: "bg-pastel-green"
+  },
+  {
+    id: 3,
     title: "Eliteharbur (Shopify E-commerce Website)",
     description: "I built and launched a cheerful, easy-to-use Shopify website for Eliteharbur, helping their brand deliver a simple and delightful shopping experience.",
     image: "/lovable-uploads/2a39adcf-4595-4697-83e3-31bdeba09dc9.png",
@@ -30,7 +39,7 @@ const projects = [
     color: "bg-pastel-pink"
   },
   {
-    id: 3,
+    id: 4,
     title: "Capstone Project – Elder Care Startup",
     description: "I created a business plan for an elder care startup—combining design thinking, user feedback, and financial planning to move from idea to real impact.",
     image: "/lovable-uploads/66cd5996-1505-4ab1-a76a-957635cc0dfa.png",
@@ -39,7 +48,7 @@ const projects = [
     color: "bg-pastel-purple"
   },
   {
-    id: 4,
+    id: 5,
     title: "Brand Genesis – BotanIQ",
     description: "For BotanIQ, I developed a fresh, organic brand identity and designed their Shopify website—helping them share their wellness mission in every pixel.",
     image: "/lovable-uploads/b6d48e18-014c-440d-a2f6-f2034b689cf7.png",
@@ -48,7 +57,7 @@ const projects = [
     color: "bg-pastel-green"
   },
   {
-    id: 5,
+    id: 6,
     title: "Business Analysis & Process Management (Coursera)",
     description: "On Coursera, I learned to map processes, optimize workflows, and make sharper decisions—all rooted in real data.",
     image: "/lovable-uploads/54a5335b-0e37-4755-bad8-7b3190c26528.png",
@@ -57,7 +66,7 @@ const projects = [
     color: "bg-pastel-yellow"
   },
   {
-    id: 6,
+    id: 7,
     title: "Responsive Web Interface (Multi-Specialty Hospital)",
     description: "I designed a modern, user-centric landing page for a multi-specialty hospital to make information easy and accessible.",
     image: "/lovable-uploads/2717389b-a8fc-4483-aab7-2dd20f17e15a.png",
@@ -66,7 +75,7 @@ const projects = [
     color: "bg-pastel-peach"
   },
   {
-    id: 7,
+    id: 8,
     title: "Plug It (EV Charging Startup)",
     description: "My team and I won the SDG Hackathon with Plug It, a sustainable solution for EV charging that's all about greener cities.",
     image: "/lovable-uploads/867f07c3-2caa-41ee-aef0-7cd319b5ab4d.png",
@@ -75,7 +84,7 @@ const projects = [
     color: "bg-pastel-blue"
   },
   {
-    id: 8,
+    id: 9,
     title: "Interplanetary Travel App Prototype (Figma)",
     description: "Just for fun: I created a Figma prototype for a cosmic travel app like Uber—imagining what space journeys could look like if booking was easy and playful.",
     image: "/lovable-uploads/dfc28735-190a-425b-8e34-bde4ee4fbf97.png",
@@ -84,7 +93,7 @@ const projects = [
     color: "bg-pastel-green"
   },
   {
-    id: 9,
+    id: 10,
     title: "Vivah Brand Analysis",
     description: "I audited Vivah's social presence and delivered creative strategies to help their engagement skyrocket.",
     image: "/lovable-uploads/315fb446-1f42-48c3-8761-ad3b92690fec.png",
@@ -93,7 +102,7 @@ const projects = [
     color: "bg-pastel-pink"
   },
   {
-    id: 10,
+    id: 11,
     title: "Email Marketing Lead Magnet Page (Kit.com)",
     description: "From idea to launch: I designed a high-converting email lead magnet page on Kit.com, complete with automation sequences for growth.",
     image: "/lovable-uploads/1af44227-f669-4179-b3c3-2645c31e9972.png",
@@ -102,7 +111,7 @@ const projects = [
     color: "bg-pastel-purple"
   },
   {
-    id: 11,
+    id: 12,
     title: "Google Ads Campaign for Dinora (B2B Jeans Brand)",
     description: "I drove real business results with targeted Google Ads for Dinora—optimizing creative, keywords, bidding, and reporting to maximize quality B2B leads.",
     image: "/lovable-uploads/11391f00-db89-4744-a2a5-0b4de5744119.png",

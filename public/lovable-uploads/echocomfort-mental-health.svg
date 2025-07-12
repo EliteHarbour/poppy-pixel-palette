@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f0f9f9" rx="20" ry="20"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="800" height="80" fill="#2c9c91" rx="20" ry="20"/>
+  
+  <!-- Logo -->
+  <circle cx="50" cy="40" r="25" fill="white"/>
+  <path d="M40 40 Q 50 25, 60 40 T 80 40" stroke="#2c9c91" stroke-width="4" fill="none"/>
+  
+  <!-- Navigation -->
+  <text x="700" y="45" font-family="Arial" font-size="16" fill="white">Home</text>
+  <text x="640" y="45" font-family="Arial" font-size="16" fill="white">Chat</text>
+  <text x="560" y="45" font-family="Arial" font-size="16" fill="white">Resources</text>
+  <text x="460" y="45" font-family="Arial" font-size="16" fill="white">Assessment</text>
+  <text x="400" y="45" font-family="Arial" font-size="16" fill="white">About</text>
+  
+  <!-- Main Title -->
+  <text x="400" y="180" font-family="Arial" font-size="40" font-weight="bold" fill="#2c9c91" text-anchor="middle">Anonymous Mental Health Support</text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="230" font-family="Arial" font-size="18" fill="#555" text-anchor="middle">Access AI-powered emotional support, resources, and self-assessment tools.</text>
+  <text x="400" y="260" font-family="Arial" font-size="18" fill="#555" text-anchor="middle">No sign-up required, completely anonymous, and always here for you.</text>
+  
+  <!-- Buttons -->
+  <rect x="300" y="300" width="200" height="50" rx="25" ry="25" fill="#2c9c91"/>
+  <text x="400" y="330" font-family="Arial" font-size="18" fill="white" text-anchor="middle">Talk to AI Counselor</text>
+  
+  <rect x="550" y="300" width="200" height="50" rx="25" ry="25" fill="white" stroke="#2c9c91" stroke-width="2"/>
+  <text x="650" y="330" font-family="Arial" font-size="18" fill="#2c9c91" text-anchor="middle">Explore Resources</text>
+  
+  <!-- Features -->
+  <rect x="100" y="400" width="180" height="150" rx="10" ry="10" fill="white" stroke="#ddd" stroke-width="2"/>
+  <text x="190" y="430" font-family="Arial" font-size="18" font-weight="bold" fill="#2c9c91" text-anchor="middle">AI Chat Support</text>
+  <text x="190" y="460" font-family="Arial" font-size="14" fill="#555" text-anchor="middle" width="160">Have a conversation with</text>
+  <text x="190" y="480" font-family="Arial" font-size="14" fill="#555" text-anchor="middle" width="160">our AI counselor for</text>
+  <text x="190" y="500" font-family="Arial" font-size="14" fill="#555" text-anchor="middle" width="160">supportive guidance.</text>
+  
+  <rect x="310" y="400" width="180" height="150" rx="10" ry="10" fill="white" stroke="#ddd" stroke-width="2"/>
+  <text x="400" y="430" font-family="Arial" font-size="18" font-weight="bold" fill="#2c9c91" text-anchor="middle">Resources</text>
+  <text x="400" y="460" font-family="Arial" font-size="14" fill="#555" text-anchor="middle" width="160">Access personalized</text>
+  <text x="400" y="480" font-family="Arial" font-size="14" fill="#555" text-anchor="middle" width="160">mental health resources</text>
+  <text x="400" y="500" font-family="Arial" font-size="14" fill="#555" text-anchor="middle" width="160">and coping strategies.</text>
+  
+  <rect x="520" y="400" width="180" height="150" rx="10" ry="10" fill="white" stroke="#ddd" stroke-width="2"/>
+  <text x="610" y="430" font-family="Arial" font-size="18" font-weight="bold" fill="#2c9c91" text-anchor="middle">Assessment</text>
+  <text x="610" y="460" font-family="Arial" font-size="14" fill="#555" text-anchor="middle" width="160">Take a quick assessment</text>
+  <text x="610" y="480" font-family="Arial" font-size="14" fill="#555" text-anchor="middle" width="160">to understand your</text>
+  <text x="610" y="500" font-family="Arial" font-size="14" fill="#555" text-anchor="middle" width="160">mental wellbeing.</text>
+</svg>

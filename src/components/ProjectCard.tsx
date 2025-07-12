@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ExternalLink } from "lucide-react";
 
 interface ProjectCardProps {

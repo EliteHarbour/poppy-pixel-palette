@@ -28,7 +28,7 @@ const projects = [
     id: 2,
     title: "EchoComfort – AI Mental Health Support",
     description: "I built an AI-powered anonymous counseling platform that provides instant emotional support, self-assessments, and personalized mental health resources designed with a strong focus on user privacy and no sign-ups required.",
-    image: "/lovable-uploads/b14fb8b2-4a36-4fb8-9c56-9e3dae15f637.png",
+    image: "/lovable-uploads/17b5f3c7-3cf2-4d8c-8c15-7a654ab6e88e.png",
     link: "https://echo-comfort-chat.vercel.app/",
     category: "development",
     color: "bg-pastel-green"

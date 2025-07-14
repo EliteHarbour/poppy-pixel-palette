@@ -98,11 +98,11 @@ const projects = [
   },
   {
     id: 10,
-    title: "Eliteharbur (Shopify E-commerce Website)",
-    description: "I built and launched a cheerful, easy-to-use Shopify website for Eliteharbur, helping their brand deliver a simple and delightful shopping experience.",
-    image: "/lovable-uploads/2a39adcf-4595-4697-83e3-31bdeba09dc9.png",
-    link: "https://1bjvju-n0.myshopify.com",
-    category: "development",
+    title: "The Learning Canvas – Product Management Project",
+    description: "Led product strategy for a teacher-focused homework app. Defined user personas, prioritized features, built a clickable prototype, and crafted GTM and freemium strategy using PM frameworks",
+    image: "/lovable-uploads/1140c1c6-6e50-4fdf-b742-bb6a9aa69103.png",
+    link: "https://www.canva.com/design/DAGsSAu1AfI/0EXegiTbmb6IKRwSX7LXiA/edit?utm_content=DAGsSAu1AfI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+    category: "business",
     color: "bg-pastel-pink"
   },
   {

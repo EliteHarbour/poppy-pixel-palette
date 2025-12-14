@@ -212,7 +212,7 @@ const internships = [
   },
   {
     id: 2,
-    title: "EverHope Oncology",
+    title: "Everhope Oncology",
     role: "Growth Marketing Intern",
     duration: "Nov 2025 – Present",
     description: "Optimized 150+ blogs and pages on Strapi CMS with SEO, GEO, and metadata improvements. Supported paid and organic marketing across Meta Ads and social content, improving funnel performance by ~25%.",
@@ -225,7 +225,7 @@ const internships = [
 const experiences = [
   {
     title: "Growth Marketing Intern",
-    company: "EverHope Oncology",
+    company: "Everhope Oncology",
     duration: "Nov 2025 – Present",
     description: [
       "Optimized 150+ blogs and pages on Strapi CMS with SEO, GEO, and metadata improvements to boost organic visibility.",

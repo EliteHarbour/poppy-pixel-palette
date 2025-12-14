@@ -35,6 +35,7 @@ const Navbar = () => {
           <a href="#about" className="animated-underline font-medium">About</a>
           <a href="#skills" className="animated-underline font-medium">Skills</a>
           <a href="#experience" className="animated-underline font-medium">Experience</a>
+          <a href="#internships" className="animated-underline font-medium">Internships</a>
           <a href="#projects" className="animated-underline font-medium">Projects</a>
           <a href="#contact" className="sticker-button bg-primary text-white">Contact Me</a>
         </div>
@@ -52,6 +53,7 @@ const Navbar = () => {
             <a href="#about" className="font-medium py-2" onClick={() => setIsOpen(false)}>About</a>
             <a href="#skills" className="font-medium py-2" onClick={() => setIsOpen(false)}>Skills</a>
             <a href="#experience" className="font-medium py-2" onClick={() => setIsOpen(false)}>Experience</a>
+            <a href="#internships" className="font-medium py-2" onClick={() => setIsOpen(false)}>Internships</a>
             <a href="#projects" className="font-medium py-2" onClick={() => setIsOpen(false)}>Projects</a>
             <a href="#contact" className="sticker-button bg-primary text-white w-fit" onClick={() => setIsOpen(false)}>Contact Me</a>
           </div>

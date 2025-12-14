@@ -199,7 +199,54 @@ const skills = [
   { category: "Technical Tools", skills: ["Microsoft Office", "Trello", "Jira", "Shopify", "WordPress", "SEMrush", "Mixpanel", "Zapier", "n8n", "kit.com", "aisensy", "Google Analytics", "Workflow Automation"] },
 ];
 
+const internships = [
+  {
+    id: 1,
+    title: "Giottus",
+    role: "Digital Marketing Intern",
+    duration: "Aug 2025 – Nov 2025",
+    description: "Drove SEO & AEO for Giottus, a leading crypto exchange, raising organic impressions by 25% and boosting AI-answer visibility. Implemented UTM + Analytics system to track clicks, CTR, and conversions across 20+ campaigns.",
+    image: "/lovable-uploads/giottus-logo.jpg",
+    category: "Digital Marketing",
+    color: "bg-pastel-peach"
+  },
+  {
+    id: 2,
+    title: "EverHope Oncology",
+    role: "Growth Marketing Intern",
+    duration: "Nov 2025 – Present",
+    description: "Optimized 150+ blogs and pages on Strapi CMS with SEO, GEO, and metadata improvements. Supported paid and organic marketing across Meta Ads and social content, improving funnel performance by ~25%.",
+    image: "/lovable-uploads/everhope-logo.jpg",
+    category: "Growth Marketing",
+    color: "bg-pastel-pink"
+  }
+];
+
 const experiences = [
+  {
+    title: "Growth Marketing Intern",
+    company: "EverHope Oncology",
+    duration: "Nov 2025 – Present",
+    description: [
+      "Optimized 150+ blogs and pages on Strapi CMS with SEO, GEO, and metadata improvements to boost organic visibility.",
+      "Supported paid and organic marketing across Meta Ads and social content, improving funnel performance by ~25%.",
+      "Managed queries and comments across platforms, strengthening empathetic communication and online reputation.",
+      "Conducted marketing research to support growth experiments, audience expansion, and new revenue opportunities."
+    ],
+    color: "pink"
+  },
+  {
+    title: "Digital Marketing Intern",
+    company: "Giottus",
+    duration: "Aug 2025 – Nov 2025",
+    description: [
+      "Drove SEO & AEO for Giottus, a leading crypto exchange, raising organic impressions by 25% and boosting AI-answer visibility.",
+      "Implemented a UTM + Analytics system to track clicks, CTR, and conversions, improving insights across 20+ campaigns.",
+      "Implemented Pinterest and Reddit organic growth strategies, expanding brand visibility and community engagement.",
+      "Designed an AI-citable content framework, guiding the team to publish resources optimized for AI search engines."
+    ],
+    color: "peach"
+  },
   {
     title: "Co-Founder",
     company: "Clipsy",
@@ -495,8 +542,47 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Internships Section */}
+      <section id="internships" className="py-20 px-4 md:px-0">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+            My <span className="text-primary">Internships</span>
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Real-world experience driving growth and marketing impact at innovative companies.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {internships.map((internship) => (
+              <div key={internship.id} className={`sticker-card ${internship.color} p-6 hover-lift`}>
+                <div className="flex items-center mb-4">
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-black mr-4 bg-white flex items-center justify-center">
+                    <img 
+                      src={internship.image} 
+                      alt={internship.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold">{internship.title}</h3>
+                    <p className="text-primary font-medium">{internship.role}</p>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 mb-3">{internship.duration}</p>
+                <p className="text-gray-700">{internship.description}</p>
+                <div className="mt-4">
+                  <span className="inline-block bg-white/80 px-3 py-1 rounded-full text-sm font-medium border border-black/10">
+                    {internship.category}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 md:px-0" ref={projectsRef}>
+      <section id="projects" className="py-20 bg-pastel-yellow px-4 md:px-0" ref={projectsRef}>
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
             Featured <span className="text-primary">Projects</span>

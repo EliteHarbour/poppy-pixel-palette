@@ -216,7 +216,7 @@ const internships = [
     role: "Operations & Product Intern",
     duration: "May 2026 – Present",
     description: "Managed customer support operations handling 150+ tickets/month with escalations and technical coordination. Built weekly Support Ticket, LinkedIn, and Website Analytics dashboards, and executed 100+ automation test cases across Smoke, Functional, Regression, and UAT testing.",
-    image: "/lovable-uploads/connqt-logo.png",
+    image: "/__l5e/assets-v1/57fe79a9-7c50-4ae6-ba79-7f123a44e313/connqt-logo.png",
     category: "Operations & Product",
     color: "bg-pastel-green"
   },
@@ -224,7 +224,7 @@ const internships = [
     id: 3,
     title: "Everhope Oncology",
     role: "Growth Marketing Intern",
-    duration: "Nov 2025 – Present",
+    duration: "Nov 2025 – Jan 2026",
     description: "Optimized 150+ blogs and pages on Strapi CMS with SEO, GEO, and metadata improvements. Supported paid and organic marketing across Meta Ads and social content, improving funnel performance by ~25%.",
     image: "/lovable-uploads/everhope-logo.jpg",
     category: "Growth Marketing",
@@ -268,7 +268,7 @@ const experiences = [
   {
     title: "Growth Marketing Intern",
     company: "Everhope Oncology",
-    duration: "Nov 2025 – Present",
+    duration: "Nov 2025 – Jan 2026",
     description: [
       "Optimized 150+ blogs and pages on Strapi CMS with SEO, GEO, and metadata improvements to boost organic visibility.",
       "Supported paid and organic marketing across Meta Ads and social content, improving funnel performance by ~25%.",

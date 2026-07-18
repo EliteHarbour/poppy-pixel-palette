@@ -216,9 +216,9 @@ const internships = [
     role: "Operations & Product Intern",
     duration: "May 2026 – Present",
     description: "Managed customer support operations handling 150+ tickets/month with escalations and technical coordination. Built weekly Support Ticket, LinkedIn, and Website Analytics dashboards, and executed 100+ automation test cases across Smoke, Functional, Regression, and UAT testing.",
-    image: "/__l5e/assets-v1/57fe79a9-7c50-4ae6-ba79-7f123a44e313/connqt-logo.png",
+    image: "/lovable-uploads/connqt-logo.png",
     category: "Operations & Product",
-    color: "bg-pastel-green"
+    color: "bg-pastel-blue"
   },
   {
     id: 3,
@@ -598,11 +598,11 @@ const Index = () => {
             {internships.map((internship) => (
               <div key={internship.id} className={`sticker-card ${internship.color} p-6 hover-lift`}>
                 <div className="flex items-center mb-4">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-black mr-4 bg-white flex items-center justify-center">
+                  <div className="w-20 h-12 rounded-lg overflow-hidden border-2 border-black mr-4 bg-white flex items-center justify-center p-1">
                     <img 
                       src={internship.image} 
                       alt={internship.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   <div>

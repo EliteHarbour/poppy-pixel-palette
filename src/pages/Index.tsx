@@ -12,7 +12,7 @@ import AnimatedText from "@/components/AnimatedText";
 import ScrollToTop from "@/components/ScrollToTop";
 import ToolCard from "@/components/ToolCard";
 
-const heroPhoto = "/lovable-uploads/2ad85604-131e-48ce-9d08-2ee4455921fa.png";
+const heroPhoto = "/lovable-uploads/adnan-main.jpeg";
 
 const projects = [
   {
@@ -202,16 +202,26 @@ const skills = [
 const internships = [
   {
     id: 1,
-    title: "Giottus",
-    role: "Digital Marketing Intern",
-    duration: "Aug 2025 – Nov 2025",
-    description: "Drove SEO & AEO for Giottus, a leading crypto exchange, raising organic impressions by 25% and boosting AI-answer visibility. Implemented UTM + Analytics system to track clicks, CTR, and conversions across 20+ campaigns.",
-    image: "/lovable-uploads/giottus-logo.jpg",
-    category: "Digital Marketing",
-    color: "bg-pastel-peach"
+    title: "The StepUp Ventures",
+    role: "Investment & Incubation Intern",
+    duration: "Jan 2026 – May 2026",
+    description: "Prepared IC one-pagers, investor-ready pitch decks, and IMs to support funding evaluation. Built sector-focused investment theses through market and competitive research, and managed LinkedIn content and investor communications.",
+    image: "/lovable-uploads/stepup-logo.jpg",
+    category: "Investment & Incubation",
+    color: "bg-pastel-yellow"
   },
   {
     id: 2,
+    title: "Connqt.ai",
+    role: "Operations & Product Intern",
+    duration: "May 2026 – Present",
+    description: "Managed customer support operations handling 150+ tickets/month with escalations and technical coordination. Built weekly Support Ticket, LinkedIn, and Website Analytics dashboards, and executed 100+ automation test cases across Smoke, Functional, Regression, and UAT testing.",
+    image: "/lovable-uploads/connqt-logo.png",
+    category: "Operations & Product",
+    color: "bg-pastel-green"
+  },
+  {
+    id: 3,
     title: "Everhope Oncology",
     role: "Growth Marketing Intern",
     duration: "Nov 2025 – Present",
@@ -219,10 +229,42 @@ const internships = [
     image: "/lovable-uploads/everhope-logo.jpg",
     category: "Growth Marketing",
     color: "bg-pastel-pink"
+  },
+  {
+    id: 4,
+    title: "Giottus",
+    role: "Digital Marketing Intern",
+    duration: "Aug 2025 – Nov 2025",
+    description: "Drove SEO & AEO for Giottus, a leading crypto exchange, raising organic impressions by 25% and boosting AI-answer visibility. Implemented UTM + Analytics system to track clicks, CTR, and conversions across 20+ campaigns.",
+    image: "/lovable-uploads/giottus-logo.jpg",
+    category: "Digital Marketing",
+    color: "bg-pastel-peach"
   }
 ];
 
 const experiences = [
+  {
+    title: "Operations & Product Intern",
+    company: "Connqt.ai",
+    duration: "May 2026 – Present",
+    description: [
+      "Managed customer support operations, handling 150+ tickets/month, issue tracking, escalations, and technical coordination.",
+      "Developed weekly Support Ticket, LinkedIn Performance, and Website Analytics Dashboards for business insights.",
+      "Performed Smoke, Functional, Regression, and UAT testing and executed 100+ automation test cases to ensure product quality."
+    ],
+    color: "green"
+  },
+  {
+    title: "Investment & Incubation Intern",
+    company: "The StepUp Ventures",
+    duration: "Jan 2026 – May 2026",
+    description: [
+      "Prepared IC one-pagers, investor-ready pitch decks, and IMs to support funding evaluation and investment decisions.",
+      "Built sector-focused investment theses through market and competitive research to identify high-growth opportunities.",
+      "Managed LinkedIn content and investor communications to strengthen brand visibility and stakeholder engagement."
+    ],
+    color: "yellow"
+  },
   {
     title: "Growth Marketing Intern",
     company: "Everhope Oncology",
